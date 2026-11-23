@@ -27,7 +27,7 @@ IG = 'https://www.instagram.com/nora.cafekitap/'
 XTW = 'https://x.com/NoraBiKitapEvi'
 FB = 'https://www.facebook.com/norakitapcafe'
 HOURS = 'Pazartesi–Cumartesi 08.00–20.00 · Pazar 13.00–19.00'
-GOATCOUNTER = ''  # goatcounter.com'da kayıt olup seçtiğin kodu yaz, ör. 'norakitap' -> https://norakitap.goatcounter.com
+GOATCOUNTER = 'norasahaf'  # goatcounter.com'da kayıt olup seçtiğin kodu yaz, ör. 'norakitap' -> https://norakitap.goatcounter.com
 SURE = 'Başvuruları genellikle 3 iş günü içinde yanıtlıyoruz. Yoğun dönemlerde süre uzayabilir.'
 FREE = 'Teklif almak ücretsizdir. Kabul etmek zorunda değilsiniz.'
 
