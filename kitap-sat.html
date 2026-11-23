@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <title>Kitap başvurusu · Nora Kitap Evi</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Kitaplarınızı satmak ya da bağışlamak için fotoğraf ve bilgilerinizi gönderin. Teklif ücretsiz, kabul zorunlu değil.">
+<meta name="description" content="Kitaplarınızı satmak ya da bağışlamak için formu doldurun; hazır mesaj WhatsApp’ta açılır. Teklif almak ücretsiz.">
 <meta name="theme-color" content="#0d0d0d">
 <meta property="og:title" content="Kitap başvurusu · Nora Kitap Evi">
-<meta property="og:description" content="Kitaplarınızı satmak ya da bağışlamak için fotoğraf ve bilgilerinizi gönderin. Teklif ücretsiz, kabul zorunlu değil.">
+<meta property="og:description" content="Kitaplarınızı satmak ya da bağışlamak için formu doldurun; hazır mesaj WhatsApp’ta açılır. Teklif almak ücretsiz.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="tr_TR">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -19,32 +19,33 @@
 <a class="logo" href="index.html" aria-label="Nora Kitap Evi ana sayfa">NORA<i>.</i><small>kitap evi</small></a>
 <button class="burger" aria-label="Menü" aria-expanded="false">Menü</button>
 <nav class="nav" aria-label="Ana menü">
-<a href="index.html#nasil">Nasıl çalışır?</a>
+<a href="index.html">Ana sayfa</a>
 <a href="nora-hafiza.html">Nora Hafıza</a>
-<a href="index.html#rehber">Fotoğraf rehberi</a>
-<a href="index.html#sss">Sık sorulanlar</a>
+<div class="grp"><button class="gbtn" type="button" aria-expanded="false">Kitap türleri ve özel durumlar</button><div class="gsub"><a href="kutuphane-alimi.html">Kütüphane ve toplu kitap</a><a href="tasinma-kentsel-donusum.html">Taşınma ve kentsel dönüşüm</a><a href="vefat-sonrasi-kutuphane.html">Vefat sonrası kütüphane</a><a href="eski-nadir-kitap.html">Eski, nadir ve eski harfli kitap</a><a href="ansiklopedi-dergi.html">Ansiklopedi, dergi ve seriler</a></div></div>
 <a href="index.html#iletisim">İletişim</a>
-<a class="btn" href="kitap-sat.html">Kitaplarımı vermek istiyorum</a>
+<a class="btn" href="kitap-sat.html">Satış / bağış başvurusu</a>
 </nav></div></header>
 <main>
 <section class="hero sub"><div class="wrap">
 <div class="crumb"><a href="index.html">Ana sayfa</a> / Başvuru</div>
 <h1>Kitap başvurusu</h1>
-<p class="lead">Başvuru ücretsiz, teklifi kabul etmek zorunda değilsiniz. Formu doldurun, hazır mesaj WhatsApp'ta açılır; fotoğrafları o sohbete eklersiniz.</p>
+<p class="lead">Formu doldurun, hazır mesaj WhatsApp’ta açılır. Kitap fotoğraflarını o sohbete eklersiniz. Teklif almak ücretsizdir. Kabul etmek zorunda değilsiniz.</p>
 </div></section>
 <section style="padding-top:40px"><div class="wrap narrow">
-<p class="note">Bu bir ilan sitesi değil. Kitaplar listelenmez, kimseye gösterilmez. Kabul ederseniz Nora doğrudan satın alır ya da bağış olarak devralır. Form bilgilerinizi bir sunucuda saklamaz; yalnızca WhatsApp mesajına çevirir.</p>
+<div class="quick"><div><b>Formla uğraşmak istemiyor musunuz?</b><span>Kitaplığınızın fotoğraflarını WhatsApp’tan gönderin. Size yardımcı olalım.</span></div><a class="btn" href="https://wa.me/905529358912?text=Merhaba%2C%20kitapl%C4%B1%C4%9F%C4%B1m%C4%B1n%20foto%C4%9Fraflar%C4%B1n%C4%B1%20g%C3%B6ndermek%20istiyorum.%20Yard%C4%B1mc%C4%B1%20olur%20musunuz%3F">WhatsApp’tan gönder</a></div>
+<p class="note" style="margin-top:24px">Bu bir ilan sitesi değil. Kitaplar listelenmez, kimseye gösterilmez. Form bilgilerinizi bir sunucuda saklamaz; yalnızca WhatsApp mesajına çevirir. Başvuruları genellikle 1–2 iş günü içinde yanıtlıyoruz. Yoğun dönemlerde süre uzayabilir.</p>
 
-<form id="appForm" class="" novalidate autocomplete="on">
+<div id="errSum" class="errsum" role="alert"></div>
+<form id="appForm" novalidate autocomplete="on">
 <div class="form">
 <h2><span>01</span> Ne yapmak istiyorsunuz?</h2>
 <div class="modes">
-<label class="mode"><input type="radio" name="tur" value="sat" checked><span><b>Satmak istiyorum</b>Teklif verin, uygunsa kitaplar teslim alınsın, ödeme yapılsın.</span></label>
-<label class="mode"><input type="radio" name="tur" value="bagis"><span><b>Bağışlamak istiyorum</b>Para istemiyorum, kitaplar iyi bir yere gitsin.</span></label>
-<label class="mode"><input type="radio" name="tur" value="hafiza"><span><b>Nora Hafıza olarak bağışlamak istiyorum</b>Kitapların içine adı ve istediğim not yazılsın, öyle raflara konsun.</span></label>
+<label class="mode"><input type="radio" name="tur" value="sat" checked><span><b>Satış</b>Kitaplarınızı Nora’ya satın.</span></label>
+<label class="mode"><input type="radio" name="tur" value="bagis"><span><b>Karşılıksız bağış</b>Kitaplarınızı bedelsiz devredin.</span></label>
+<label class="mode"><input type="radio" name="tur" value="hafiza"><span><b>Nora Hafıza</b>Kitaplarınızı sahibinin adı ve kişisel notuyla yaşatın. Bu kitaplar asla satılmaz; yerleşik kütüphanemizde kalır.</span></label>
 </div>
-<div id="hafizaBox" class="hidden" style="margin-top:20px;border-top:1px solid var(--line);padding-top:20px">
-<label class="f">Kitapların içine yazılacak ad *<small> (örn. "Ahmet Yılmaz'ın kitaplığından")</small>
+<div id="hafizaBox" class="hidden" style="margin-top:22px;border-top:1px solid var(--line);padding-top:22px">
+<label class="f">Kitapların içine yazılacak ad *<small> (örn. "Ahmet Yılmaz’ın kitaplığından")</small>
 <input type="text" id="hafizaAd" maxlength="120"><div class="err">Hafıza için bir ad yazın.</div></label>
 <label class="f">Neden ayrılıyorsunuz? <small>(isteğe bağlı)</small>
 <select id="hafizaNeden"><option value="">Seçin</option><option value="tasinma">Taşınma</option><option value="kentsel">Kentsel dönüşüm</option><option value="vefat">Aileden birinin vefatı</option><option value="diger">Diğer</option></select></label>
@@ -54,63 +55,51 @@
 </div>
 
 <div class="form">
-<h2><span>02</span> Kitap fotoğrafları</h2>
-<div id="drop" class="drop" tabindex="0" role="button" aria-label="Fotoğraf seç">
-<b>Fotoğraf seçin ya da buraya bırakın</b>
-<span>En fazla 10 fotoğraf · JPEG, PNG, WebP, HEIC · her biri en fazla 10 MB</span>
-</div>
-<input id="photos" type="file" accept="image/*,.heic,.heif" multiple class="hidden">
-<div class="count" id="count">0 / 10</div>
-<div class="err" id="fileErr" style="display:none"></div>
-<div class="thumbs" id="thumbs"></div>
-<p class="hint" style="margin-top:12px">Sırt yazıları okunsun, gün ışığında çekin, flaş kullanmayın. Fotoğraflar buradan gönderilmez: formu bitirince açılan WhatsApp sohbetine eklersiniz. Burada seçmek, kaç tane ekleyeceğinizi hatırlamanız ve mesaja yazmamız içindir. Daha fazlası varsa orada ekleyebilirsiniz.</p>
-<div class="row">
-<label class="f">Tahmini kitap sayısı <small>(isteğe bağlı)</small><input type="number" id="sayi" min="1" inputmode="numeric"></label>
-<span></span></div>
+<h2><span>02</span> Kitaplarınız</h2>
+<label class="f">Tahmini kitap sayısı <small>(bilmiyorsanız tahmin edin)</small>
+<select id="sayi"><option value="">Seçin</option><option>1–20</option><option>20–50</option><option>50–100</option><option>100–300</option><option>300–500</option><option>500+</option></select></label>
 <label class="f">Kitaplar hakkında not <small>(isteğe bağlı)</small>
 <textarea id="notlar" maxlength="600" placeholder="Hangi tür kitaplar, durumu, boşaltma tarihi vb."></textarea></label>
+<p class="note" style="margin:0"><b>Fotoğraflar bu formdan gönderilmez.</b> Formu bitirince WhatsApp sohbeti açılır; kitap fotoğraflarını orada eklersiniz. Gün ışığında çekin, sırt yazıları okunsun, flaş kullanmayın. Kaç fotoğraf olduğu fark etmez.</p>
 </div>
 
 <div class="form">
-<h2><span>03</span> Sizin bilgileriniz</h2>
+<h2><span>03</span> Bilgileriniz</h2>
 <div class="row">
 <label class="f">Ad *<input type="text" id="ad" autocomplete="given-name"><div class="err">Adınızı yazın.</div></label>
 <label class="f">Soyad *<input type="text" id="soyad" autocomplete="family-name"><div class="err">Soyadınızı yazın.</div></label>
 </div>
 <div class="row">
-<label class="f">Telefon *<input type="tel" id="tel" autocomplete="tel" inputmode="tel" placeholder="05xx xxx xx xx"><div class="err">Geçerli bir telefon yazın.</div></label>
-<label class="f">E-posta <small>(isteğe bağlı)</small><input type="email" id="email" autocomplete="email"><div class="err">E-posta geçersiz görünüyor.</div></label>
+<label class="f">Telefon *<input type="tel" id="tel" autocomplete="tel" inputmode="tel" placeholder="05xx xxx xx xx"><div class="err">Geçerli bir telefon numarası yazın.</div></label>
+<label class="f">E-posta <small>(isteğe bağlı)</small><input type="email" id="email" autocomplete="email"><div class="err">E-posta adresi geçersiz görünüyor.</div></label>
 </div></div>
 
 <div class="form">
-<h2><span>04</span> Kitapların bulunduğu adres</h2>
+<h2><span>04</span> Kitaplar nerede?</h2>
 <div class="row">
 <label class="f">İl *<select id="il" autocomplete="address-level1"></select></label>
 <label class="f">İlçe *<input type="text" id="ilce" autocomplete="address-level2"><div class="err">İlçeyi yazın.</div></label>
 </div>
-<label class="f">Mahalle *<input type="text" id="mahalle"><div class="err">Mahalleyi yazın.</div></label>
-<label class="f">Açık adres *<textarea id="adres" autocomplete="street-address" style="min-height:80px"></textarea><div class="err">Açık adresi yazın.</div></label>
-<p class="hint">Adres, teklifi kabul ederseniz kitapları teslim almak için kullanılır. İstanbul dışındaysanız yine de yazın; nasıl yapacağımızı sizinle konuşuruz.</p>
+<p class="hint">Açık adresinizi şimdi istemiyoruz. Teklifi kabul ederseniz, kitapları teslim almak için o zaman sorarız.</p>
 </div>
 
 <div class="form">
-<label class="chk"><input type="checkbox" id="kvkk"><span><a href="kvkk.html" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a>'ni okudum; bilgilerimin, başvurumu değerlendirmek ve benimle iletişime geçmek amacıyla Nora Kitap Evi ile WhatsApp üzerinden paylaşılmasına onay veriyorum. *</span></label>
-<button class="btn submit" type="submit">Başvurumu WhatsApp'ta Gönder</button>
-<p class="hint" style="margin:14px 0 0">Gönder'e basınca WhatsApp'ta hazır mesaj açılır. Mesajı göndermeden başvuru bize ulaşmaz.</p>
+<label class="chk" style="font-size:1rem"><input type="checkbox" id="kvkk"><span><a href="kvkk.html" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a>’ni okudum; bilgilerimin, başvurumu değerlendirmek ve benimle iletişime geçmek amacıyla Nora Kitap Evi ile WhatsApp üzerinden paylaşılmasına onay veriyorum. *</span></label>
+<button class="btn submit" type="submit">Başvurumu WhatsApp’ta Gönder</button>
+<p class="hint" style="margin:14px 0 0">Gönder’e basınca WhatsApp’ta hazır mesaj açılır. Mesajı göndermeden başvuru bize ulaşmaz.</p>
 </div>
 </form>
 
 <div id="done" class="done" role="status" aria-live="polite">
-<h2>Mesaj hazır. Son adım sizde.</h2>
-<p>Başvuru kodunuz:<br><span class="code" id="doneCode"></span></p>
-<ol>
-<li>Açılan WhatsApp sohbetinde mesajı <b>gönderin</b>. Açılmadıysa aşağıdaki yeşil düğmeye basın.</li>
-<li id="doneSome">Aynı sohbete <b id="doneN">0</b> fotoğrafı (ve varsa fazlasını) ekleyin: sohbette ataç simgesi → Galeri.</li>
-<li id="doneNone" class="hidden">Aynı sohbete kitap fotoğraflarını ekleyin: ataç simgesi → Galeri.</li>
-<li>Fotoğraflara bakıp size yazarız. Teklif ücretsiz, kabul zorunlu değil.</li>
+<h2>Mesajınız hazır.</h2>
+<p>Başvuru numaranız<br><span class="code" id="doneCode"></span></p>
+<ol class="ol-big">
+<li>WhatsApp’ta hazır mesajı <b>gönderin</b>. Açılmadıysa aşağıdaki yeşil düğmeye basın.</li>
+<li>Kitap fotoğraflarını aynı sohbete ekleyin.</li>
 </ol>
+<p class="hint" style="margin-top:1.4rem"><b>Bundan sonra:</b> 1. Başvurunuz oluşturuldu · 2. Fotoğraflar incelenir · 3. Teklif iletilir · 4. Kitaplar teslim alınır. Başvuruları genellikle 1–2 iş günü içinde yanıtlıyoruz. Yoğun dönemlerde süre uzayabilir.</p>
 <div class="btns">
-<a class="btn" id="waBtn" href="#" target="_blank" rel="noopener" style="background:#1c8c4e;border-color:#1c8c4e">WhatsApp'ı aç</a>
+<a class="btn" id="waBtn" href="#" target="_blank" rel="noopener" style="background:#1c8c4e;border-color:#1c8c4e">WhatsApp’ı aç</a>
 <a class="btn dark hidden" id="mailBtn" href="#">E-posta ile gönder</a>
 <button class="btn ghost" id="copyBtn" type="button" style="color:var(--ink)">Mesajı kopyala</button>
 <button class="btn ghost" id="backBtn" type="button" style="color:var(--ink)">Formu düzenle</button>
@@ -123,12 +112,12 @@
 <footer class="ftr"><div class="wrap">
 <div class="cols">
 <div><h4>Nora Kitap Evi</h4>
-<p>Fatih, Şehremini’nde bir kitapçı-kafe. Kitapları satın alırız, bağış olarak kabul ederiz. Her birine Nora Hafıza’da bir kayıt açar, raflarımızda yerini veririz.</p>
+<p>Fatih, Şehremini’nde bir kitapçı-kafe. Kitapları satın alırız, bağış olarak kabul ederiz. Hafıza bağışı olarak devraldığımız kitaplara Nora Hafıza kaydı açarız.</p>
 <p>Ahmet Vefikpaşa Cd. No:26A, Şehremini, Fatih / İstanbul</p></div>
 <div><h4>Sayfalar</h4>
 <a href="kitap-sat.html">Başvuru formu</a>
 <a href="nora-hafiza.html">Nora Hafıza</a>
-<a href="kutuphane-alimi.html">Kütüphane alımı</a>
+<a href="kutuphane-alimi.html">Kütüphane ve toplu alım</a>
 <a href="tasinma-kentsel-donusum.html">Taşınma ve kentsel dönüşüm</a>
 <a href="vefat-sonrasi-kutuphane.html">Vefat sonrası kütüphane</a>
 <a href="eski-nadir-kitap.html">Eski ve nadir kitap</a>
@@ -139,9 +128,9 @@
 
 <a href="kvkk.html">KVKK aydınlatma metni</a></div>
 </div>
-<div class="fine">© <span id="yil"></span> Nora Kitap Evi. Bu site bir ilan ya da pazar yeri değildir; kitapları doğrudan Nora satın alır ya da bağış olarak devralır.</div>
+<div class="fine">© <span id="yil"></span> Nora Kitap Evi. Bu site bir ilan ya da pazar yeri değildir; kitapları doğrudan Nora satın alır ya da bağış olarak kabul eder.</div>
 </div></footer>
-<div class="wa"><a href="https://wa.me/905529358912?text=Merhaba%2C%20kitaplar%C4%B1m%20hakk%C4%B1nda%20yazmak%20istiyorum.">WhatsApp</a><a href="kitap-sat.html">Başvuru formu</a></div>
+<div class="wa"><a class="main" href="kitap-sat.html">Başvuru formu</a><a href="https://wa.me/905529358912?text=Merhaba%2C%20kitaplar%C4%B1m%20hakk%C4%B1nda%20yazmak%20istiyorum.">WhatsApp</a></div>
 <script src="main.js"></script>
 <script>document.getElementById('yil').textContent=new Date().getFullYear()</script>
 </body></html>
