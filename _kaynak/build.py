@@ -167,7 +167,7 @@ home += f'''<main>
 <span class="kicker">Nora Hafıza</span>
 <h2>Kitaplar adınızla kalır.</h2>
 <p class="lead" style="color:#fff">Kentsel dönüşüm, taşınma ya da bir yakınınızın vefatı yüzünden kitaplarınızdan ayrılmak zorunda kalanlar için. Her kitabın içine sahibinin adını, isterseniz belirlediğiniz bir notu yazarız. Kitaplar, geçmişlerini kaybetmeden yoluna devam eder.</p>
-<p style="font-size:1.1rem"><b>Nora Hafıza’da bağışlanan kitaplar asla satılmaz; daima yerleşik kütüphanemizde kalır.</b></p>
+<p style="font-size:1.1rem"><b>Nora Hafıza’da bağışlanan kitaplar asla satılmaz ve mekân dışına çıkarılmaz; daima yerleşik kütüphanemizde kalır.</b></p>
 <div class="btns"><a class="btn" href="nora-hafiza.html">Nora Hafıza nedir?</a><a class="btn ghost" href="{CTA}?tur=hafiza">Hafıza bağışı yap</a></div>
 </div></section>
 
@@ -269,7 +269,7 @@ form_page += f'''<main>
 <div class="modes">
 <label class="mode"><input type="radio" name="tur" value="sat" checked><span><b>Satış</b>Kitaplarınızı Nora’ya satın.</span></label>
 <label class="mode"><input type="radio" name="tur" value="bagis"><span><b>Karşılıksız bağış</b>Kitaplarınızı bedelsiz devredin.</span></label>
-<label class="mode"><input type="radio" name="tur" value="hafiza"><span><b>Nora Hafıza</b>Kitaplarınızı sahibinin adı ve kişisel notuyla yaşatın. Bu kitaplar asla satılmaz; yerleşik kütüphanemizde kalır.</span></label>
+<label class="mode"><input type="radio" name="tur" value="hafiza"><span><b>Nora Hafıza</b>Kitaplarınızı sahibinin adı ve kişisel notuyla yaşatın. Bu kitaplar asla satılmaz ve mekân dışına çıkarılmaz; yerleşik kütüphanemizde kalır.</span></label>
 </div>
 <div id="hafizaBox" class="hidden" style="margin-top:22px;border-top:1px solid var(--line);padding-top:22px">
 <label class="f">Kitapların içine yazılacak ad *<small> (örn. "Ahmet Yılmaz’ın kitaplığından")</small>
@@ -522,7 +522,7 @@ hf += f'''<main>
 </div></section>
 
 <section><div class="wrap narrow prose">
-<div class="callout"><b>Nora Hafıza’da bağışlanan kitaplar asla satılmaz.</b> Daima yerleşik kütüphanemizde kalır; okurlarla ve öğrencilerle buluşmaya orada devam eder.</div>
+<div class="callout"><b>Nora Hafıza’da bağışlanan kitaplar asla satılmaz ve asla mekân dışına çıkarılmaz.</b> Daima yerleşik kütüphanemizde kalır; okurlarla ve öğrencilerle buluşmaya, Nora’da okunarak devam eder.</div>
 
 <h2>Neden böyle bir şey?</h2>
 <p>Bir evden çıkarken kitaplar en çok zorlanılan eşyadır. Taşıyamazsınız, sığdıramazsınız, çöpe de atamazsınız. Kentsel dönüşümde, taşınmada, bir yakınımızı kaybettiğimizde de aynı şey olur: kitaplar “bir yerlere gider” ve geçmişleri silinir.</p>
@@ -551,7 +551,7 @@ hf += f'''<main>
 <div class="step"><h3>Başvurun</h3><p>Formda “Nora Hafıza”yı seçin. Kitapların içine yazılacak adı ve isterseniz notu yazın. Fotoğrafları WhatsApp sohbetine ekleyin.</p></div>
 <div class="step"><h3>Teslim</h3><p>Kitapların nasıl teslim edileceğini birlikte seçeriz: adresten alım ya da dükkâna getirme.</p></div>
 <div class="step"><h3>Adı yazarız</h3><p>Her kitabın içine sahibinin adını, isterseniz belirlediğiniz notu yazarız. Aralarından çıkan kişisel kâğıtları size veririz.</p></div>
-<div class="step"><h3>Kütüphanede kalır</h3><p>Kitaplar yerleşik kütüphanemizde yerini alır ve satılmaz.</p></div>
+<div class="step"><h3>Kütüphanede kalır</h3><p>Kitaplar yerleşik kütüphanemizde yerini alır. Satılmaz, ödünç verilmez; yalnızca Nora’da okunur.</p></div>
 </div>
 <p class="proc">Hafıza bir bağış biçimidir; kitapları satın almıyoruz. Para almak isterseniz normal <a href="{CTA}?tur=sat">satış başvurusu</a> yapabilirsiniz; bu kitaplar adınızla yazılmaz. Yalnızca kitap alıyoruz; dergi ve ansiklopedi gibi yayınlar duruma göre incelenir. Kitap dışı eşyaları alamıyoruz.</p>
 </div></section>
@@ -560,10 +560,11 @@ hf += f'''<main>
 <div class="head"><span class="kicker">Sık sorulanlar</span><h2>Hafıza hakkında</h2></div>
 ''' + faq([
     ('Hafıza kitapları satılır mı?', 'Hayır. Nora Hafıza kapsamında bağışlanan kitaplar asla satılmaz; daima yerleşik kütüphanemizde kalır.'),
+    ('Hafıza kitapları ödünç verilir mi?', 'Hayır. Bu kitaplar asla mekân dışına çıkarılmaz. Okurlar onları yalnızca Nora’da okur.'),
     ('Her kitabı alıyor musunuz?', 'Çoğunu. Çok yıpranmış, kullanılamayacak durumdakileri ayırırız; bunu size de söyleriz. <a href="index.html#almiyoruz">Almadığımız kitapları</a> ana sayfada yazdık.'),
     ('Kitabın içine yazı yazmanız kitaba zarar vermez mi?', 'Zarar vermeyecek biçimde, kısa ve okunaklı yazarız. İsterseniz önce nasıl yazılacağını sorabilirsiniz.'),
     ('Bağış sonrası kitaplara ne olduğunu görebilir miyim?', 'Evet. Dükkânımıza gelip bakabilirsiniz.'),
-    ('Kaç kitap getirebilirim?', 'Adedin alt ve üst sınırı yok. Çok sayıda ise önce fotoğraf gönderin; teslim yöntemini konuşuruz.'),
+    ('Kaç kitap getirebilirim?', 'Hafıza için ayrı bir kontenjan ya da sınır koymuyoruz; adedin alt ve üst sınırı yok. Çok sayıda ise önce fotoğraf gönderin, teslim yöntemini konuşuruz.'),
 ]) + f'''
 </div></section>
 
