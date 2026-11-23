@@ -4,9 +4,9 @@ import os, shutil, html, json
 OUT = '/home/claude/nora-kitap'
 SRC = '/home/claude/build'
 
-PHONE_RAW = '905539358912'
-PHONE_TXT = '0553 935 89 12'
-PHONE_TEL = '+905539358912'
+PHONE_RAW = '905529358912'
+PHONE_TXT = '0552 935 89 12'
+PHONE_TEL = '+905529358912'
 EMAIL = ''  # varsa buraya yaz: 'nora@ornek.com' -> formda ve iletişimde görünür
 ADDR = 'Ahmet Vefikpaşa Cd. No:26A, Şehremini, Fatih / İstanbul'
 WA = f'https://wa.me/{PHONE_RAW}'
@@ -62,7 +62,7 @@ def footer():
     return f'''<footer class="ftr"><div class="wrap">
 <div class="cols">
 <div><h4>Nora Kitap Evi</h4>
-<p>Fatih Şehremini'nde kitapçı-kafe. Kitapları satın alırız, bağış olarak devralırız, Nora Hafıza ile adını yazıp raflarımıza koyarız.</p>
+<p>Fatih, Şehremini’nde bir kitapçı-kafe. Kitapları satın alırız, bağış olarak kabul ederiz. Her birine Nora Hafıza’da bir kayıt açar, raflarımızda yerini veririz.</p>
 <p>{e(ADDR)}</p></div>
 <div><h4>Sayfalar</h4>
 <a href="{CTA}">Başvuru formu</a>
@@ -158,7 +158,7 @@ home += f'''<main>
 </div></div></section>
 
 <section class="alt" id="rehber"><div class="wrap">
-<div class="head"><span class="kicker">Fotoğraf rehberi</span><h2>Nasıl fotoğraflayın?</h2><p class="lead">Fotoğraf ne kadar okunaklıysa teklif o kadar doğru gelir. Tek tek çekmenize gerek yok; raf raf çekin.</p></div>
+<div class="head"><span class="kicker">Fotoğraf rehberi</span><h2>Nasıl fotoğraflamalısınız?</h2><p class="lead">Fotoğraf ne kadar okunaklıysa teklif o kadar doğru gelir. Tek tek çekmenize gerek yok; raf raf çekin.</p></div>
 <div class="dd">
 <div class="yes"><h3>Yapın</h3><ul>
 <li>Gün ışığında çekin.</li>
@@ -193,7 +193,8 @@ home += f'''<main>
 <section class="alt"><div class="wrap narrow">
 <span class="kicker">Hakkımızda</span>
 <h2>Kitapçı-kafe, hepsi bu.</h2>
-<p>Nora Kitap Evi, Şehremini'nde kitap satan ve çay-kahve servis eden bir yer. Pazarlama diliyle aramız iyi değil: ya alırız ya almayız, ikisini de açıkça söyleriz. Kitaplar bize hep bağışla da geliyor; o yüzden iyi bir yere gitmeleri meselesine ciddiyetle bakarız.</p>
+<p>Nora Kitap Evi, Şehremini’nde kitap satan, çay ve kahve servis eden bir yer. Pazarlama diliyle pek aramız yok. Bir şeyi ya alırız ya almayız; her ikisini de açıkça söyleriz.</p>
+<p>Kitaplarımızın bir kısmı bağış yoluyla geliyor. Bu yüzden onların doğru okurlara ulaşmasını, iyi bir yere gitmesini önemsiyoruz. Meseleyi bundan ibaret görüyoruz.</p>
 </div></section>
 
 <section class="dark" id="iletisim"><div class="wrap">
@@ -428,7 +429,7 @@ hf += f'''<main>
 
 <section class="alt"><div class="wrap">
 <div class="head"><span class="kicker">Nasıl işliyor</span><h2>Dört adım</h2></div>
-<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+<div class="steps" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
 <div class="step"><h3>Başvurun</h3><p>Formda "Nora Hafıza" seçeneğini işaretleyin. Kitapların içine yazılacak adı ve isterseniz notu yazın. Fotoğrafları ekleyin.</p></div>
 <div class="step"><h3>Teslim</h3><p>Kitapların nasıl teslim edileceğini birlikte seçeriz: adresten alım ya da dükkâna getirme.</p></div>
 <div class="step"><h3>Adı yazarız</h3><p>Her kitabın içine sahibinin adını, istediğiniz notu yazarız. Aralarından çıkan kişisel kâğıtları size veririz.</p></div>
