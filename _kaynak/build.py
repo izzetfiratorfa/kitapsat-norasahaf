@@ -14,7 +14,7 @@ PHONE_RAW = '905529358912'
 PHONE_TXT = '0552 935 89 12'
 PHONE_TEL = '+905529358912'
 EMAIL = ''  # varsa buraya yaz: 'nora@ornek.com' -> formda ve iletişimde görünür
-ADDR = 'Ahmet Vefikpaşa Cd. No:26A, Şehremini, Fatih / İstanbul'
+ADDR = 'Ahmet Vefikpaşa Cd. No: 26A, Şehremini, Fatih / İstanbul'
 WA = f'https://wa.me/{PHONE_RAW}'
 def wa(text): return WA + '?text=' + quote(text)
 WA_HI = wa('Merhaba, kitaplarım hakkında yazmak istiyorum.')
@@ -40,6 +40,7 @@ SERVICES = [
 ]
 
 def e(s): return html.escape(s, quote=True)
+LABEL = {u: t for u, t, _ in SERVICES}
 
 def head(title, desc, extra=''):
     GC = f'<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>' if GOATCOUNTER else ''
@@ -78,6 +79,7 @@ def header():
 '''
 
 def footer():
+    svc_links = ''.join(f'<a href="{u}">{t}</a>' for u, t, _ in SERVICES)
     mail = f'<a href="mailto:{EMAIL}">{EMAIL}</a>' if EMAIL else ''
     return f'''<footer class="ftr"><div class="wrap">
 <div class="cols">
@@ -87,11 +89,7 @@ def footer():
 <div><h4>Sayfalar</h4>
 <a href="{CTA}">Başvuru formu</a>
 <a href="nora-hafiza.html">Nora Hafıza</a>
-<a href="kutuphane-alimi.html">Kütüphane ve toplu alım</a>
-<a href="tasinma-kentsel-donusum.html">Taşınma ve kentsel dönüşüm</a>
-<a href="vefat-sonrasi-kutuphane.html">Vefat sonrası kütüphane</a>
-<a href="eski-nadir-kitap.html">Eski ve nadir kitap</a>
-<a href="ansiklopedi-dergi.html">Ansiklopedi ve dergi</a></div>
+{svc_links}</div>
 <div><h4>İletişim</h4>
 <a href="tel:{PHONE_TEL}">{PHONE_TXT}</a>
 <a href="{WA_HI}">WhatsApp ile yaz</a>
@@ -100,7 +98,7 @@ def footer():
 <p style="margin:.8rem 0 0">{HOURS}</p></div>
 </div>
 <div class="social"><a href="{GBP}" rel="noopener">Google’da yol tarifi ve yorumlar</a><a href="{IG}" rel="noopener">Instagram</a><a href="{XTW}" rel="noopener">X</a><a href="{FB}" rel="noopener">Facebook</a></div>
-<div class="fine">© <span id="yil"></span> Nora Kitap Evi. Bu site bir ilan ya da pazar yeri değildir; kitapları doğrudan Nora satın alır ya da bağış olarak kabul eder.</div>
+<div class="fine">© <span id="yil"></span> Nora Kitap Evi</div>
 </div></footer>
 <div class="wa"><a class="main" data-goatcounter-click="mobil-form" href="{CTA}">Başvuru formu</a><a data-goatcounter-click="mobil-whatsapp" href="{WA_HI}">WhatsApp</a></div>
 <script src="main.js"></script>
@@ -128,7 +126,7 @@ jsonld = json.dumps({
     "openingHoursSpecification": [
         {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "08:00", "closes": "20:00"},
         {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "13:00", "closes": "19:00"}],
-    "address": {"@type": "PostalAddress", "streetAddress": "Ahmet Vefikpaşa Cd. No:26A", "addressNeighborhood": "Şehremini",
+    "address": {"@type": "PostalAddress", "streetAddress": "Ahmet Vefikpaşa Cd. No: 26A", "addressNeighborhood": "Şehremini",
                 "addressLocality": "Fatih", "addressRegion": "İstanbul", "addressCountry": "TR"},
 }, ensure_ascii=False)
 
@@ -160,11 +158,9 @@ home += f'''<main>
 <div class="head"><span class="kicker">Nasıl çalışır</span><h2>Üç adım. Kitapları ayıklamanıza gerek yok.</h2></div>
 <div class="steps">
 <div class="step"><h3>Fotoğraf ve form</h3><p>Formu doldurun. Form hazır bir WhatsApp mesajı üretir; kitap fotoğraflarını o sohbete eklersiniz.</p></div>
-<div class="step"><h3>Yanıtımız</h3><p>Fotoğraflara bir insan bakar. Satışta teklif, bağışta teslim planı gelir. {FREE}</p></div>
+<div class="step"><h3>Yanıtımız</h3><p>Fotoğraflara bir insan bakar; genellikle 3 iş günü içinde yanıtlarız. Satışta teklif, bağışta teslim planı gelir.</p></div>
 <div class="step"><h3>Teslim</h3><p>Uygun olduğunuz gün kitaplar teslim alınır. Satışta ödeme, kitaplar kontrol edildikten sonra yapılır.</p></div>
 </div>
-<p style="margin-top:1.6rem"><b>{SURE}</b></p>
-<div class="btns"><a class="btn dark" href="{CTA}">Başvuru formuna git</a></div>
 </div></section>
 
 <section class="red"><div class="wrap narrow">
@@ -181,9 +177,10 @@ home += f'''<main>
 ''' + ''.join(f'<a class="card" href="{u}"><h3>{t}</h3><p>{d}</p><span class="more">Sayfaya git →</span></a>' for u, t, d in SERVICES) + f'''
 </div></div></section>
 
-<section class="alt" id="rehber"><div class="wrap">
-<div class="head"><span class="kicker">Fotoğraf rehberi</span><h2>Nasıl fotoğraflamalısınız?</h2><p class="lead">Fotoğraf ne kadar okunaklıysa teklif o kadar doğru gelir. Tek tek çekmenize gerek yok; raf raf çekin.</p></div>
-<div class="dd">
+<section class="alt" id="rehber"><div class="wrap narrow">
+<div class="head"><span class="kicker">Başvurmadan önce</span><h2>Bilmeniz gerekenler</h2></div>
+<details id="fotograf"><summary>Nasıl fotoğraflamalısınız?</summary>
+<div class="dd" style="margin:0 0 1.4rem">
 <div class="yes"><h3>Yapın</h3><ul>
 <li>Gün ışığında çekin.</li>
 <li>Kitapların sırtındaki yazılar okunsun.</li>
@@ -198,38 +195,38 @@ home += f'''<main>
 <li>Önceden ayıklamayın. Hangisinin değerli olduğuna biz bakarız.</li>
 <li>Fotoğraf sayısına takılmayın: WhatsApp sohbetinde dilediğiniz kadar ekleyebilirsiniz.</li>
 </ul></div>
-</div></div></section>
-
-<section id="almiyoruz"><div class="wrap narrow">
-<div class="head"><span class="kicker">Alım koşulları</span><h2>Hangi kitapları almıyoruz?</h2><p class="lead">Her kitabı kabul ettiğimiz izlenimi vermek istemiyoruz. Genellikle şunları alamıyoruz:</p></div>
-<ul class="plain-list">
+</div></details>
+<details id="almiyoruz"><summary>Hangi kitapları almıyoruz?</summary>
+<p style="max-width:none">Her kitabı kabul ettiğimiz izlenimi vermek istemiyoruz. Genellikle şunları alamıyoruz:</p>
+<ul class="plain-list" style="margin-bottom:1rem">
 <li>Yoğun nem ve küf hasarı olanlar.</li>
 <li>Sayfaları eksik ya da kullanılamayacak durumda olanlar.</li>
 <li>Çok ağır yıpranmış, okunamayacak durumdaki kitaplar.</li>
 <li>Güncelliğini yitirmiş yayınlar, test kitapları.</li>
 </ul>
-<p style="margin-top:1.2rem">Emin değilseniz yine de fotoğraf gönderin. Neyi neden almadığımızı teklifte açıkça yazarız.</p>
+<p style="max-width:none">Emin değilseniz yine de fotoğraf gönderin. Neyi neden almadığımızı teklifte açıkça yazarız.</p>
+</details>
 </div></section>
 
-<section class="alt" id="sss"><div class="wrap narrow">
+<section id="sss"><div class="wrap narrow">
 <div class="head"><span class="kicker">Sık sorulanlar</span><h2>Aklınızdakiler</h2></div>
 ''' + faq([
     ('Ne kadar sürede yanıt alırım?', SURE),
     ('Nora ilan sitesi mi, pazar yeri mi?', 'Hayır. Burada ilan verilmez, kimse kimseye bağlanmaz. Kitapları doğrudan Nora Kitap Evi satın alır ya da bağış olarak kabul eder.'),
     ('Ne kadar ödeyeceğinizi nasıl belirliyorsunuz?', 'Kitabın türüne, durumuna, adedine ve bizim için talebine bakarız. Otomatik bir fiyat listesi yok; fotoğraflara bir insan bakar ve rakamı açıkça yazar.'),
     ('Teklifi kabul etmek zorunda mıyım?', 'Hayır. ' + FREE),
-    ('Her kitabı alıyor musunuz?', 'Hayır. <a href="#almiyoruz">Hangi kitapları alamadığımızı</a> yukarıda yazdık. Almadıklarımızı teklifte de açıkça belirtiriz; bağış olarak bırakabilir ya da geri alabilirsiniz.'),
+    ('Her kitabı alıyor musunuz?', 'Hayır. <a href="#almiyoruz">Almadığımız kitapları</a> yukarıda yazdık. Almadıklarımızı teklifte de açıkça belirtiriz; bağış olarak bırakabilir ya da geri alabilirsiniz.'),
     ('Fotoğraf çekemiyorum ya da çok kitabım var, ne yapmalıyım?', 'Evinize gelip bakabiliriz. Yerinde bakış kapasitemize göre planlanır; <a href="kitap-sat.html?yerinde=1">formda bu seçeneği işaretleyin</a> ya da arayın, uygun günü birlikte belirleyelim.'),
     ('İstanbul dışından başvurabilir miyim?', 'Evet, başvurabilirsiniz. İstanbul dışı başvurular durumuna göre değerlendirilir: kitap sayısı, türü ve bulunduğu yer. Fotoğrafları gönderin, yapılıp yapılamayacağını yazarız.'),
     ('Kitapları kim, nasıl teslim alıyor?', 'Teslim şeklini teklifte konuşuruz: adresinizden alım ya da dükkâna getirme. Açık adresinizi bu aşamada istemiyoruz; teklifi kabul ederseniz sorarız.'),
     ('Ödeme ne zaman, nasıl yapılıyor?', 'Satışta ödeme, kitaplar teslim alınıp fotoğraflarla karşılaştırıldıktan sonra, sizinle kararlaştırdığımız yöntemle yapılır. Online ödeme ya da ön ödeme istemiyoruz.'),
-    ('Sadece kitap mı alıyorsunuz?', 'Evet, kitap alıyoruz. Dergi ve ansiklopedi dahil. Kitap dışı eşyaları alamıyoruz.'),
+    ('Sadece kitap mı alıyorsunuz?', 'Evet, kitap alıyoruz. Dergi ve ansiklopedi gibi yayınlar duruma göre incelenir. Kitap dışı eşyaları alamıyoruz.'),
     ('Nora Hafıza’da bağışlanan kitaplar satılır mı?', 'Hayır. Nora Hafıza kapsamında bağışlanan kitaplar asla satılmaz; daima yerleşik kütüphanemizde kalır.'),
     ('Bilgilerim nereye gidiyor?', 'Bu site hiçbir şey saklamaz. Form, bilgilerinizi WhatsApp mesajına çevirir ve doğrudan bize gider. Ayrıntı için <a href="kvkk.html">KVKK metnine</a> bakın.'),
 ]) + f'''
 </div></section>
 
-<section><div class="wrap narrow">
+<section class="alt"><div class="wrap narrow">
 <span class="kicker">Hakkımızda</span>
 <h2>Kitapçı-kafe, hepsi bu.</h2>
 <p>Nora Kitap Evi, Şehremini’nde kitap satan, çay ve kahve servis eden bir yer. Pazarlama diliyle pek aramız yok. Bir şeyi ya alırız ya almayız; her ikisini de açıkça söyleriz.</p>
@@ -351,7 +348,7 @@ def service_page(slug, title, desc, h1, lead, body, faqs, hero_btns=None, hafiza
     btns = hero_btns or f'<a class="btn" href="{CTA}">Fotoğrafları gönderin, teklifinizi alın</a><a class="btn ghost" href="{WA_HI}">WhatsApp’tan yazın</a>'
     pg += f'''<main>
 <section class="hero sub"><div class="wrap">
-<div class="crumb"><a href="index.html">Ana sayfa</a> / {e(title)}</div>
+<div class="crumb"><a href="index.html">Ana sayfa</a> / {e(LABEL[slug])}</div>
 <h1>{h1}</h1>
 <p class="lead">{lead}</p>
 <div class="btns">{btns}</div>
@@ -556,14 +553,14 @@ hf += f'''<main>
 <div class="step"><h3>Adı yazarız</h3><p>Her kitabın içine sahibinin adını, isterseniz belirlediğiniz notu yazarız. Aralarından çıkan kişisel kâğıtları size veririz.</p></div>
 <div class="step"><h3>Kütüphanede kalır</h3><p>Kitaplar yerleşik kütüphanemizde yerini alır ve satılmaz.</p></div>
 </div>
-<p class="proc">Hafıza bir bağış biçimidir; kitapları satın almıyoruz. Para almak isterseniz normal <a href="{CTA}?tur=sat">satış başvurusu</a> yapabilirsiniz; bu kitaplar adınızla yazılmaz. Yalnızca kitap alıyoruz; dergi ve ansiklopedi dahil. Kitap dışı eşyaları alamıyoruz.</p>
+<p class="proc">Hafıza bir bağış biçimidir; kitapları satın almıyoruz. Para almak isterseniz normal <a href="{CTA}?tur=sat">satış başvurusu</a> yapabilirsiniz; bu kitaplar adınızla yazılmaz. Yalnızca kitap alıyoruz; dergi ve ansiklopedi gibi yayınlar duruma göre incelenir. Kitap dışı eşyaları alamıyoruz.</p>
 </div></section>
 
 <section><div class="wrap narrow">
 <div class="head"><span class="kicker">Sık sorulanlar</span><h2>Hafıza hakkında</h2></div>
 ''' + faq([
     ('Hafıza kitapları satılır mı?', 'Hayır. Nora Hafıza kapsamında bağışlanan kitaplar asla satılmaz; daima yerleşik kütüphanemizde kalır.'),
-    ('Her kitabı alıyor musunuz?', 'Çoğunu. Çok yıpranmış, kullanılamayacak durumdakileri ayırırız; bunu size de söyleriz. <a href="index.html#almiyoruz">Hangi kitapları alamadığımızı</a> ana sayfada yazdık.'),
+    ('Her kitabı alıyor musunuz?', 'Çoğunu. Çok yıpranmış, kullanılamayacak durumdakileri ayırırız; bunu size de söyleriz. <a href="index.html#almiyoruz">Almadığımız kitapları</a> ana sayfada yazdık.'),
     ('Kitabın içine yazı yazmanız kitaba zarar vermez mi?', 'Zarar vermeyecek biçimde, kısa ve okunaklı yazarız. İsterseniz önce nasıl yazılacağını sorabilirsiniz.'),
     ('Bağış sonrası kitaplara ne olduğunu görebilir miyim?', 'Evet. Dükkânımıza gelip bakabilirsiniz.'),
     ('Kaç kitap getirebilirim?', 'Adedin alt ve üst sınırı yok. Çok sayıda ise önce fotoğraf gönderin; teslim yöntemini konuşuruz.'),

@@ -225,3 +225,6 @@ textarea{min-height:100px;resize:vertical}
 .ftr .social a{display:inline;font-weight:600}
 .quick.visit{margin-top:14px;border-color:var(--red)}
 .quick.visit .btn{background:var(--black);border-color:var(--black)}
+
+.alt details{border-color:#b9ad94}
+.alt details summary{font-size:1.15rem}
