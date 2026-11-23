@@ -215,7 +215,7 @@ home += f'''<main>
     ('Nora ilan sitesi mi, pazar yeri mi?', 'Hayır. Burada ilan verilmez, kimse kimseye bağlanmaz. Kitapları doğrudan Nora Kitap Evi satın alır ya da bağış olarak kabul eder.'),
     ('Ne kadar ödeyeceğinizi nasıl belirliyorsunuz?', 'Kitabın türüne, durumuna, adedine ve bizim için talebine bakarız. Otomatik bir fiyat listesi yok; fotoğraflara bir insan bakar ve rakamı açıkça yazar.'),
     ('Teklifi kabul etmek zorunda mıyım?', 'Hayır. ' + FREE),
-    ('Her kitabı alıyor musunuz?', 'Hayır. <a href="#almiyoruz">Almadığımız kitapları</a> yukarıda yazdık. Almadıklarımızı teklifte de açıkça belirtiriz; bağış olarak bırakabilir ya da geri alabilirsiniz.'),
+    ('Her kitabı alıyor musunuz?', 'Hayır. <a href="#almiyoruz">Almadığımız kitapları</a> yukarıda yazdık. Almadıklarımızı teklifte de açıkça belirtiriz. Toplu alımlarda bunları bağış olarak alabiliriz ya da hurda fiyatı teklif edebiliriz; isterseniz adresinizden biz alırız, isterseniz kendinizde kalır.'),
     ('Fotoğraf çekemiyorum ya da çok kitabım var, ne yapmalıyım?', 'Evinize gelip bakabiliriz. Yerinde bakış kapasitemize göre planlanır; <a href="kitap-sat.html?yerinde=1">formda bu seçeneği işaretleyin</a> ya da arayın, uygun günü birlikte belirleyelim.'),
     ('İstanbul dışından başvurabilir miyim?', 'Evet, başvurabilirsiniz. İstanbul dışı başvurular durumuna göre değerlendirilir: kitap sayısı, türü ve bulunduğu yer. Fotoğrafları gönderin, yapılıp yapılamayacağını yazarız.'),
     ('Kitapları kim, nasıl teslim alıyor?', 'Teslim şeklini teklifte konuşuruz: adresinizden alım ya da dükkâna getirme. Nora Hafıza bağışlarında adresten alım her zaman ücretsizdir. Satışlarda adresten alım, adresinize ve kitap sayısına göre her başvuruda ayrıca değerlendirilir; yakın bölgelerde ücretsizdir, uzak adreslerde teklifte ayrıca konuşuruz. Büyük kütüphaneler için nakliye aracı ayarlarız. Açık adresinizi bu aşamada istemiyoruz; teklifi kabul ederseniz sorarız.'),
@@ -378,7 +378,7 @@ service_page('kutuphane-alimi.html', 'Kütüphane ve toplu kitap alımı',
 <p>Aynı yazarın, aynı dönemin, aynı konunun bir arada durması da değer taşır. Kütüphane bütün olarak bakılınca daha iyi okunur.</p>
 
 <h2>Teklif parça parça gelebilir</h2>
-<p>Bütün kütüphaneyi almak zorunda değiliz, siz de bütününü vermek zorunda değilsiniz. Teklifte neyi aldığımızı, neyi alamadığımızı ve nedenini yazarız. Almadıklarımızı bağış olarak bırakabilir ya da geri alabilirsiniz.</p>
+<p>Bütün kütüphaneyi almak zorunda değiliz, siz de bütününü vermek zorunda değilsiniz. Teklifte neyi aldığımızı, neyi alamadığımızı ve nedenini yazarız. Toplu alımlarda almadıklarımızı bağış olarak alabilir ya da hurda fiyatı teklif edebiliriz; siz isterseniz adresinizden biz alırız, isterseniz kendinizde kalır.</p>
 
 <h2>Üç yüz kitabı nasıl fotoğraflarsınız?</h2>
 <ul>
@@ -396,7 +396,7 @@ service_page('kutuphane-alimi.html', 'Kütüphane ve toplu kitap alımı',
 <p>Evinize gelip bakabiliriz. Yerinde bakış kapasitemize göre planlanır; formda seçeneği işaretleyin, sizi arayıp uygun günü birlikte belirleyelim.</p>
 <div class="btns"><a class="btn dark" data-goatcounter-click="yerinde-bakis" href="{CTA}?yerinde=1">Evde bakılmasını isteyin</a></div>''',
     [('Önceden ayıklamam gerekir mi?', 'Hayır. Olduğu gibi gösterin. Ayıklama işi zorlaştırır ve sizi yorar.'),
-     ('Fiyat düşük gelirse?', 'Reddedebilirsiniz. Almadığımız kitapları bağış olarak bırakmak da, geri almak da size kalmış.'),
+     ('Fiyat düşük gelirse?', 'Reddedebilirsiniz. Almadığımız kitapları bağış olarak vermek, hurda fiyatıyla bize bırakmak ya da kendinizde tutmak size kalmış.'),
      ('Kurum olarak da başvurabilir miyiz?', 'Evet. Yukarıdaki kurum mesajıyla yazın; sayı, tarih, kat ve taşıma koşullarını bilmemiz yeterli.')],
     hero_btns=f'<a class="btn" href="{CTA}">Fotoğrafları gönderin, teklifinizi alın</a><a class="btn ghost" href="{WA_KURUM}">Kurum başvurusu</a>')
 
