@@ -215,3 +215,13 @@ textarea{min-height:100px;resize:vertical}
 .hint{font:1rem/1.5 var(--sans);color:#4d473d}
 .ol-big{padding-left:1.3em;font:1.1rem/1.55 var(--sans)}
 .ol-big li{margin-bottom:.8em}
+
+/* kontrast: koyu zeminde açık kırmızı */
+.hero h1 em,.tagline em{color:#ff6b61}
+.logo i{color:#ff6b61}
+.hero .kicker,section.dark .kicker{color:#ff8a82}
+.hero .btn.ghost{color:#f2ece0}
+.ftr .social{margin-top:30px;padding-top:18px;border-top:1px solid #2a2a2a;display:flex;flex-wrap:wrap;gap:8px 22px}
+.ftr .social a{display:inline;font-weight:600}
+.quick.visit{margin-top:14px;border-color:var(--red)}
+.quick.visit .btn{background:var(--black);border-color:var(--black)}

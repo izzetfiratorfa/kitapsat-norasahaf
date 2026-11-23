@@ -16,6 +16,8 @@
   var pre = new URLSearchParams(location.search).get('tur');
   if(pre){var r=form.querySelector('input[name=tur][value='+pre+']');if(r)r.checked=true}
   syncMode();
+  if(new URLSearchParams(location.search).get('yerinde')==='1')$('#yerinde').checked=true;
+  function visit(){return $('#yerinde').checked}
 
   /* ---- doğrulama ---- */
   function val(id){return (document.getElementById(id).value||'').trim()}
@@ -73,7 +75,8 @@
       if(val('hafizaNot'))L.push('Eklenecek not: '+val('hafizaNot'));
     }
     L.push('');
-    L.push('Kitap fotoğraflarını bu sohbete ekliyorum.');
+    if(visit())L.push('Evde bakılmasını istiyorum (fotoğraf çekemiyorum ya da kitap sayım çok). Beni arayabilirsiniz.');
+    else L.push('Kitap fotoğraflarını bu sohbete ekliyorum.');
     return L.join('\n');
   }
 
@@ -87,6 +90,9 @@
     var wa='https://wa.me/'+CFG.phone+'?text='+encodeURIComponent(msg);
     $('#doneCode').textContent=c;
     $('#waBtn').href=wa;
+    $('#doneFoto').classList.toggle('hidden',visit());
+    $('#doneYerinde').classList.toggle('hidden',!visit());
+    if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:'event/basvuru-whatsapp-acildi-'+mode()+(visit()?'-yerinde':''),title:'Başvuru WhatsApp açıldı',event:true})}
     var mail=$('#mailBtn');
     if(CFG.email){mail.href='mailto:'+CFG.email+'?subject='+encodeURIComponent('Kitap başvurusu '+c)+'&body='+encodeURIComponent(msg.replace(/\*/g,''));mail.classList.remove('hidden')}
     $('#copyBtn').onclick=function(){

@@ -22,6 +22,12 @@ WA_PHOTO = wa('Merhaba, kitaplığımın fotoğraflarını göndermek istiyorum.
 WA_KURUM = wa('Merhaba, kurum olarak toplu kitap devretmek istiyoruz.\n\nKurum adı:\nTahmini kitap sayısı:\nİstenen teslim tarihi:\nKitapların bulunduğu adres (ilçe):\nKat / asansör var mı:\nTaşıma koşulları (araç girişi, mesafe vb.):\n\nFotoğrafları bu sohbete ekliyorum.')
 WA_ACIL = wa('Merhaba, boşaltma tarihim yakın, kitaplarım için yardım istiyorum.\n\nBoşaltma tarihi:\nTahmini kitap sayısı:\nİlçe:\nKat / asansör var mı:\nNedeni (taşınma / kentsel dönüşüm):\n\nFotoğrafları bu sohbete ekliyorum.')
 CTA = 'kitap-sat.html'
+GBP = 'https://share.google/qawsznqt1ohQSFSN0'
+IG = 'https://www.instagram.com/nora.cafekitap/'
+XTW = 'https://x.com/NoraBiKitapEvi'
+FB = 'https://www.facebook.com/norakitapcafe'
+HOURS = 'Pazartesi–Cumartesi 08.00–20.00 · Pazar 13.00–19.00'
+GOATCOUNTER = ''  # goatcounter.com'da kayıt olup seçtiğin kodu yaz, ör. 'norakitap' -> https://norakitap.goatcounter.com
 SURE = 'Başvuruları genellikle 3 iş günü içinde yanıtlıyoruz. Yoğun dönemlerde süre uzayabilir.'
 FREE = 'Teklif almak ücretsizdir. Kabul etmek zorunda değilsiniz.'
 
@@ -36,6 +42,7 @@ SERVICES = [
 def e(s): return html.escape(s, quote=True)
 
 def head(title, desc, extra=''):
+    GC = f'<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>' if GOATCOUNTER else ''
     return f'''<!doctype html>
 <html lang="tr">
 <head>
@@ -50,6 +57,7 @@ def head(title, desc, extra=''):
 <meta property="og:locale" content="tr_TR">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
+{GC}
 {extra}
 </head>
 <body>
@@ -88,11 +96,13 @@ def footer():
 <a href="tel:{PHONE_TEL}">{PHONE_TXT}</a>
 <a href="{WA_HI}">WhatsApp ile yaz</a>
 {mail}
-<a href="kvkk.html">KVKK aydınlatma metni</a></div>
+<a href="kvkk.html">KVKK aydınlatma metni</a>
+<p style="margin:.8rem 0 0">{HOURS}</p></div>
 </div>
+<div class="social"><a href="{GBP}" rel="noopener">Google’da yol tarifi ve yorumlar</a><a href="{IG}" rel="noopener">Instagram</a><a href="{XTW}" rel="noopener">X</a><a href="{FB}" rel="noopener">Facebook</a></div>
 <div class="fine">© <span id="yil"></span> Nora Kitap Evi. Bu site bir ilan ya da pazar yeri değildir; kitapları doğrudan Nora satın alır ya da bağış olarak kabul eder.</div>
 </div></footer>
-<div class="wa"><a class="main" href="{CTA}">Başvuru formu</a><a href="{WA_HI}">WhatsApp</a></div>
+<div class="wa"><a class="main" data-goatcounter-click="mobil-form" href="{CTA}">Başvuru formu</a><a data-goatcounter-click="mobil-whatsapp" href="{WA_HI}">WhatsApp</a></div>
 <script src="main.js"></script>
 <script>document.getElementById('yil').textContent=new Date().getFullYear()</script>
 </body></html>
@@ -106,12 +116,18 @@ def write(name, content):
         f.write(content)
 
 def quick_box():
-    return f'''<div class="quick"><div><b>Formla uğraşmak istemiyor musunuz?</b><span>Kitaplığınızın fotoğraflarını WhatsApp’tan gönderin. Size yardımcı olalım.</span></div><a class="btn" href="{WA_PHOTO}">WhatsApp’tan gönder</a></div>'''
+    return f'''<div class="quick"><div><b>Formla uğraşmak istemiyor musunuz?</b><span>Kitaplığınızın fotoğraflarını WhatsApp’tan gönderin. Size yardımcı olalım.</span></div><a class="btn" data-goatcounter-click="whatsapp-fotograf" href="{WA_PHOTO}">WhatsApp’tan gönder</a></div>'''
+
+def visit_box():
+    return f'''<div class="quick visit"><div><b>Fotoğraf çekemiyor musunuz ya da çok kitabınız mı var?</b><span>Evinize gelip bakabiliriz. Yerinde bakış kapasitemize göre planlanır; sizi arayıp uygun günü birlikte belirleriz.</span></div><a class="btn dark" data-goatcounter-click="yerinde-bakis" href="{CTA}?yerinde=1">Evde bakılmasını isteyin</a></div>'''
 
 # ================================================================ ANA SAYFA
 jsonld = json.dumps({
     "@context": "https://schema.org", "@type": "BookStore", "name": "Nora Kitap Evi",
-    "telephone": PHONE_TEL,
+    "telephone": PHONE_TEL, "hasMap": GBP, "sameAs": [IG, XTW, FB],
+    "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "08:00", "closes": "20:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "13:00", "closes": "19:00"}],
     "address": {"@type": "PostalAddress", "streetAddress": "Ahmet Vefikpaşa Cd. No:26A", "addressNeighborhood": "Şehremini",
                 "addressLocality": "Fatih", "addressRegion": "İstanbul", "addressCountry": "TR"},
 }, ensure_ascii=False)
@@ -137,6 +153,7 @@ home += f'''<main>
 <a class="card red" href="nora-hafiza.html"><div class="tag">Nora Hafıza</div><h3>Nora Hafıza</h3><p>Kitaplarınızı adınızla ve notunuzla yaşatın.</p><span class="more">Nasıl işliyor →</span></a>
 </div>
 {quick_box()}
+{visit_box()}
 </div></section>
 
 <section class="alt" id="nasil"><div class="wrap">
@@ -202,6 +219,8 @@ home += f'''<main>
     ('Ne kadar ödeyeceğinizi nasıl belirliyorsunuz?', 'Kitabın türüne, durumuna, adedine ve bizim için talebine bakarız. Otomatik bir fiyat listesi yok; fotoğraflara bir insan bakar ve rakamı açıkça yazar.'),
     ('Teklifi kabul etmek zorunda mıyım?', 'Hayır. ' + FREE),
     ('Her kitabı alıyor musunuz?', 'Hayır. <a href="#almiyoruz">Hangi kitapları alamadığımızı</a> yukarıda yazdık. Almadıklarımızı teklifte de açıkça belirtiriz; bağış olarak bırakabilir ya da geri alabilirsiniz.'),
+    ('Fotoğraf çekemiyorum ya da çok kitabım var, ne yapmalıyım?', 'Evinize gelip bakabiliriz. Yerinde bakış kapasitemize göre planlanır; <a href="kitap-sat.html?yerinde=1">formda bu seçeneği işaretleyin</a> ya da arayın, uygun günü birlikte belirleyelim.'),
+    ('İstanbul dışından başvurabilir miyim?', 'Evet, başvurabilirsiniz. İstanbul dışı başvurular durumuna göre değerlendirilir: kitap sayısı, türü ve bulunduğu yer. Fotoğrafları gönderin, yapılıp yapılamayacağını yazarız.'),
     ('Kitapları kim, nasıl teslim alıyor?', 'Teslim şeklini teklifte konuşuruz: adresinizden alım ya da dükkâna getirme. Açık adresinizi bu aşamada istemiyoruz; teklifi kabul ederseniz sorarız.'),
     ('Ödeme ne zaman, nasıl yapılıyor?', 'Satışta ödeme, kitaplar teslim alınıp fotoğraflarla karşılaştırıldıktan sonra, sizinle kararlaştırdığımız yöntemle yapılır. Online ödeme ya da ön ödeme istemiyoruz.'),
     ('Sadece kitap mı alıyorsunuz?', 'Evet, kitap alıyoruz. Dergi ve ansiklopedi dahil. Kitap dışı eşyaları alamıyoruz.'),
@@ -225,7 +244,8 @@ home += f'''<main>
 <dl>
 <dt>Telefon / WhatsApp</dt><dd><a style="color:#fff" href="tel:{PHONE_TEL}">{PHONE_TXT}</a></dd>
 <dt>Adres</dt><dd>{e(ADDR)}</dd>
-<dt>Saatler</dt><dd>Her gün açığız. Pazarları geç açıp erken kapatıyoruz; gelmeden önce yazın.</dd>
+<dt>Saatler</dt><dd>{HOURS}</dd>
+<dt>Bizi bulun</dt><dd><a style="color:#fff" href="{GBP}" rel="noopener">Google’da yol tarifi ve yorumlar</a><br><a style="color:#fff" href="{IG}" rel="noopener">Instagram</a> · <a style="color:#fff" href="{XTW}" rel="noopener">X</a> · <a style="color:#fff" href="{FB}" rel="noopener">Facebook</a></dd>
 </dl></div></div></section>
 </main>
 ''' + footer()
@@ -266,6 +286,7 @@ form_page += f'''<main>
 
 <div class="form">
 <h2><span>02</span> Kitaplarınız</h2>
+<label class="chk" style="font-size:1.05rem"><input type="checkbox" id="yerinde"><span><b>Fotoğraf çekemiyorum ya da çok kitabım var; evde bakılmasını istiyorum.</b> Yerinde bakış kapasitemize göre planlanır; sizi arayıp uygun günü birlikte belirleriz.</span></label>
 <label class="f">Tahmini kitap sayısı <small>(bilmiyorsanız tahmin edin)</small>
 <select id="sayi"><option value="">Seçin</option><option>1–20</option><option>20–50</option><option>50–100</option><option>100–300</option><option>300–500</option><option>500+</option></select></label>
 <label class="f">Kitaplar hakkında not <small>(isteğe bağlı)</small>
@@ -290,7 +311,7 @@ form_page += f'''<main>
 <label class="f">İl *<select id="il" autocomplete="address-level1"></select></label>
 <label class="f">İlçe *<input type="text" id="ilce" autocomplete="address-level2"><div class="err">İlçeyi yazın.</div></label>
 </div>
-<p class="hint">Açık adresinizi şimdi istemiyoruz. Teklifi kabul ederseniz, kitapları teslim almak için o zaman sorarız.</p>
+<p class="hint">Açık adresinizi şimdi istemiyoruz. Teklifi kabul ederseniz, kitapları teslim almak için o zaman sorarız. İstanbul dışındaysanız yine de başvurun; durumu değerlendiririz.</p>
 </div>
 
 <div class="form">
@@ -305,9 +326,10 @@ form_page += f'''<main>
 <p>Başvuru numaranız<br><span class="code" id="doneCode"></span></p>
 <ol class="ol-big">
 <li>WhatsApp’ta hazır mesajı <b>gönderin</b>. Açılmadıysa aşağıdaki yeşil düğmeye basın.</li>
-<li>Kitap fotoğraflarını aynı sohbete ekleyin.</li>
+<li id="doneFoto">Kitap fotoğraflarını aynı sohbete ekleyin.</li>
+<li id="doneYerinde" class="hidden">Fotoğraf göndermenize gerek yok. Size yazıp ya da arayıp evde bakmak için uygun günü belirleriz.</li>
 </ol>
-<p class="hint" style="margin-top:1.4rem"><b>Bundan sonra:</b> 1. Başvurunuz oluşturuldu · 2. Fotoğraflar incelenir · 3. Teklif iletilir · 4. Kitaplar teslim alınır. {SURE}</p>
+<p class="hint" style="margin-top:1.4rem"><b>Bundan sonra:</b> 1. Başvurunuz oluşturuldu · 2. Fotoğraflar incelenir (ya da yerinde bakış planlanır) · 3. Teklif iletilir · 4. Kitaplar teslim alınır. {SURE}</p>
 <div class="btns">
 <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener" style="background:#1c8c4e;border-color:#1c8c4e">WhatsApp’ı aç</a>
 <a class="btn dark hidden" id="mailBtn" href="#">E-posta ile gönder</a>
@@ -371,7 +393,11 @@ service_page('kutuphane-alimi.html', 'Kütüphane ve toplu kitap alımı',
 
 <h2>Okul, dernek, vakıf, ofis ve kapanan işletmeler</h2>
 <p>Kurumların toplu devri için farklı bilgiler gerekir: kitap sayısı, teslim tarihi, kitapların bulunduğu kat ve asansör durumu, taşıma koşulları. Aşağıdaki düğme, bu bilgileri soran hazır bir WhatsApp mesajı açar. Doldurup gönderin, fotoğrafları ekleyin.</p>
-<div class="btns"><a class="btn dark" href="{WA_KURUM}">Kurum olarak WhatsApp’tan yaz</a></div>''',
+<div class="btns"><a class="btn dark" href="{WA_KURUM}">Kurum olarak WhatsApp’tan yaz</a></div>
+
+<h2>Fotoğraf çekmek zorsa ya da çok kitap varsa</h2>
+<p>Evinize gelip bakabiliriz. Yerinde bakış kapasitemize göre planlanır; formda seçeneği işaretleyin, sizi arayıp uygun günü birlikte belirleyelim.</p>
+<div class="btns"><a class="btn dark" data-goatcounter-click="yerinde-bakis" href="{CTA}?yerinde=1">Evde bakılmasını isteyin</a></div>''',
     [('Önceden ayıklamam gerekir mi?', 'Hayır. Olduğu gibi gösterin. Ayıklama işi zorlaştırır ve sizi yorar.'),
      ('Fiyat düşük gelirse?', 'Reddedebilirsiniz. Almadığımız kitapları bağış olarak bırakmak da, geri almak da size kalmış.'),
      ('Kurum olarak da başvurabilir miyiz?', 'Evet. Yukarıdaki kurum mesajıyla yazın; sayı, tarih, kat ve taşıma koşullarını bilmemiz yeterli.')],
@@ -423,7 +449,10 @@ service_page('vefat-sonrasi-kutuphane.html', 'Vefat sonrası kütüphane',
 <p>Kitapların arasından kişisel kâğıtlar çıkabilir: mektup, fotoğraf, not, ayraç. Bunları görürsek ayırır, size veririz. Önceden bakmak isterseniz buna zaman tanırız.</p>
 
 <h2>Aile ortak karar versin</h2>
-<p>Böyle bir kütüphane genellikle birden fazla kişiyi ilgilendirir. Başvuruyu bir kişi yapabilir, ama teslimden önce ailenin hemfikir olması iyi olur. Acelemiz yok.</p>''',
+<p>Böyle bir kütüphane genellikle birden fazla kişiyi ilgilendirir. Başvuruyu bir kişi yapabilir, ama teslimden önce ailenin hemfikir olması iyi olur. Acelemiz yok.</p>
+
+<h2>Fotoğraf çekmek zor geliyorsa</h2>
+<p>Kütüphaneyi fotoğraflamak çoğu zaman yorucudur. Evinize gelip bakabiliriz; yerinde bakış kapasitemize göre planlanır. <a href="{CTA}?yerinde=1">Formda bu seçeneği işaretleyin</a> ya da arayın, sizin için uygun günü birlikte belirleyelim.</p>''',
     [('Kitaplardan bazılarını ailede tutmak istiyoruz.', 'Elbette. Önce istediklerinizi ayırın, kalanı bize gösterin. Kısmi başvuru sorun değil.'),
      ('Hafıza için ne yazıyorsunuz?', 'Kitabın içine kütüphane sahibinin adını, isterseniz sizin belirlediğiniz kısa bir notu yazarız. Not isteğe bağlıdır.'),
      ('Hafıza bağışında kitaplara ne oluyor?', 'Yerleşik kütüphanemizde kalır ve okurlarla buluşur. Satılmaz. Dükkâna gelip bakabilirsiniz.')],
@@ -570,6 +599,7 @@ kv += f'''<main>
 <li><b>Hafıza bilgileri (ad, neden, not):</b> Kitapların içine yazılacak bilgileri belirlemek için.</li>
 </ul>
 
+{"<h2>Çerezsiz sayaç</h2><p>Bu sitede GoatCounter adlı, çerez kullanmayan, kişiyi tanımlamayan bir sayaç çalışır. Hangi sayfaların açıldığını anonim olarak sayar; ad, telefon gibi bilgileriniz buraya gönderilmez.</p>" if GOATCOUNTER else ""}
 <h2>Hukuki sebep</h2>
 <p>Verileriniz, başvurunuzu değerlendirmek ve sözleşme (satış ya da bağış) kurmak amacıyla, açık rızanıza dayanılarak işlenir.</p>
 
