@@ -158,7 +158,7 @@ home += f'''<main>
 <div class="head"><span class="kicker">Nasıl çalışır</span><h2>Üç adım. Kitapları ayıklamanıza gerek yok.</h2></div>
 <div class="steps">
 <div class="step"><h3>Fotoğraf ve form</h3><p>Formu doldurun. Form hazır bir WhatsApp mesajı üretir; kitap fotoğraflarını o sohbete eklersiniz.</p></div>
-<div class="step"><h3>Yanıtımız</h3><p>Fotoğraflara bir insan bakar; genellikle 3 iş günü içinde yanıtlarız. Satışta teklif, bağışta teslim planı gelir.</p></div>
+<div class="step"><h3>Yanıtımız</h3><p>Fotoğraflara bir insan bakar (Fırat ya da Nur); genellikle 3 iş günü içinde yanıtlarız. Satışta teklif, bağışta teslim planı gelir.</p></div>
 <div class="step"><h3>Teslim</h3><p>Uygun olduğunuz gün kitaplar teslim alınır. Satışta ödeme, kitaplar kontrol edildikten sonra yapılır.</p></div>
 </div>
 </div></section>
@@ -218,8 +218,8 @@ home += f'''<main>
     ('Her kitabı alıyor musunuz?', 'Hayır. <a href="#almiyoruz">Almadığımız kitapları</a> yukarıda yazdık. Almadıklarımızı teklifte de açıkça belirtiriz; bağış olarak bırakabilir ya da geri alabilirsiniz.'),
     ('Fotoğraf çekemiyorum ya da çok kitabım var, ne yapmalıyım?', 'Evinize gelip bakabiliriz. Yerinde bakış kapasitemize göre planlanır; <a href="kitap-sat.html?yerinde=1">formda bu seçeneği işaretleyin</a> ya da arayın, uygun günü birlikte belirleyelim.'),
     ('İstanbul dışından başvurabilir miyim?', 'Evet, başvurabilirsiniz. İstanbul dışı başvurular durumuna göre değerlendirilir: kitap sayısı, türü ve bulunduğu yer. Fotoğrafları gönderin, yapılıp yapılamayacağını yazarız.'),
-    ('Kitapları kim, nasıl teslim alıyor?', 'Teslim şeklini teklifte konuşuruz: adresinizden alım ya da dükkâna getirme. Açık adresinizi bu aşamada istemiyoruz; teklifi kabul ederseniz sorarız.'),
-    ('Ödeme ne zaman, nasıl yapılıyor?', 'Satışta ödeme, kitaplar teslim alınıp fotoğraflarla karşılaştırıldıktan sonra, sizinle kararlaştırdığımız yöntemle yapılır. Online ödeme ya da ön ödeme istemiyoruz.'),
+    ('Kitapları kim, nasıl teslim alıyor?', 'Teslim şeklini teklifte konuşuruz: adresinizden alım ya da dükkâna getirme. Nora Hafıza bağışlarında öncelikle adresinizden alırız; satışlarda adresten alım, kitap sayısına ve hacmine göre değerlendirilir. Açık adresinizi bu aşamada istemiyoruz; teklifi kabul ederseniz sorarız.'),
+    ('Ödeme ne zaman, nasıl yapılıyor?', 'Satışta ödeme, kitaplar teslim alınıp fotoğraflarla karşılaştırıldıktan sonra yapılır. Üç yöntemden birini seçersiniz: nakit, havale/EFT ya da Nora’da harcayabileceğiniz bakiye (teklifin aynı tutarında). Bakiyeyi isterseniz teklifin yalnızca bir kısmı için de seçebilirsiniz. Sizden ön ödeme ya da online ödeme istemiyoruz.'),
     ('Sadece kitap mı alıyorsunuz?', 'Evet, kitap alıyoruz. Dergi ve ansiklopedi gibi yayınlar duruma göre incelenir. Kitap dışı eşyaları alamıyoruz.'),
     ('Nora Hafıza’da bağışlanan kitaplar satılır mı?', 'Hayır. Nora Hafıza kapsamında bağışlanan kitaplar asla satılmaz; daima yerleşik kütüphanemizde kalır.'),
     ('Bilgilerim nereye gidiyor?', 'Bu site hiçbir şey saklamaz. Form, bilgilerinizi WhatsApp mesajına çevirir ve doğrudan bize gider. Ayrıntı için <a href="kvkk.html">KVKK metnine</a> bakın.'),
@@ -415,7 +415,7 @@ service_page('tasinma-kentsel-donusum.html', 'Taşınma ve kentsel dönüşümde
 <li>Kat ve asansör durumu</li>
 <li>Araç girişi, park mesafesi gibi taşıma koşulları</li>
 </ul>
-<p>Buna göre teslim şeklini seçeriz: adresinizden alım ya da dükkâna getirme. Açık adresi, teklifi kabul ettikten sonra sorarız.</p>
+<p>Buna göre teslim şeklini seçeriz: adresinizden alım ya da dükkâna getirme. Hafıza bağışlarında öncelikle adresinizden alırız. Açık adresi, teklifi kabul ettikten sonra sorarız.</p>
 
 <h2>Koliye koymadan önce fotoğraf gönderin</h2>
 <p>Kitapları kutulayıp bantlamadan önce fotoğraf gönderin. Neyin alınacağını, neyin kolilenmesi gerektiğini birlikte netleştirirsek gereksiz iş yapmazsınız.</p>
@@ -443,7 +443,7 @@ service_page('vefat-sonrasi-kutuphane.html', 'Vefat sonrası kütüphane',
 </ul>
 
 <h2>Kitap aralarından çıkanlar</h2>
-<p>Kitapların arasından kişisel kâğıtlar çıkabilir: mektup, fotoğraf, not, ayraç. Bunları görürsek ayırır, size veririz. Önceden bakmak isterseniz buna zaman tanırız.</p>
+<p>Kitapların arasından kişisel kâğıtlar çıkabilir: mektup, fotoğraf, not, ayraç. Bunları görürsek ayırır, bir zarfta üç ay boyunca saklarız ve size haber veririz; isterseniz gelip alırsınız. Bu süre içinde imha talebi iletmezseniz kâğıtlar, “kitapların arasından çıkanlar” adlı koleksiyonumuza eklenir. Hiçbirini atmayız.</p>
 
 <h2>Aile ortak karar versin</h2>
 <p>Böyle bir kütüphane genellikle birden fazla kişiyi ilgilendirir. Başvuruyu bir kişi yapabilir, ama teslimden önce ailenin hemfikir olması iyi olur. Acelemiz yok.</p>
@@ -549,8 +549,8 @@ hf += f'''<main>
 <div class="head"><span class="kicker">Nasıl işliyor</span><h2>Dört adım</h2></div>
 <div class="steps" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
 <div class="step"><h3>Başvurun</h3><p>Formda “Nora Hafıza”yı seçin. Kitapların içine yazılacak adı ve isterseniz notu yazın. Fotoğrafları WhatsApp sohbetine ekleyin.</p></div>
-<div class="step"><h3>Teslim</h3><p>Kitapların nasıl teslim edileceğini birlikte seçeriz: adresten alım ya da dükkâna getirme.</p></div>
-<div class="step"><h3>Adı yazarız</h3><p>Her kitaba Hafıza damgası vurur, sahibinin adını elle yazarız; isterseniz belirlediğiniz notu da ekleriz. Aralarından çıkan kişisel kâğıtları size veririz.</p></div>
+<div class="step"><h3>Teslim</h3><p>Nora Hafıza bağışlarında kitapları öncelikle adresinizden alırız; uygun değilse dükkâna da getirebilirsiniz.</p></div>
+<div class="step"><h3>Adı yazarız</h3><p>Her kitaba Hafıza damgası vurur, sahibinin adını elle yazarız; isterseniz belirlediğiniz notu da ekleriz. Aralarından çıkan kişisel kâğıtları üç ay saklar, size haber veririz; talep etmezseniz “kitapların arasından çıkanlar” koleksiyonuna eklenir.</p></div>
 <div class="step"><h3>Kütüphanede kalır</h3><p>Kitaplar üst katımızdaki yerleşik kütüphanede yerini alır. Yer dolarsa depoda saklanır, dönüşümlü sergilenir. Satılmaz, ödünç verilmez; yalnızca Nora’da okunur.</p></div>
 </div>
 <p class="proc">Hafıza bir bağış biçimidir; kitapları satın almıyoruz. Para almak isterseniz normal <a href="{CTA}?tur=sat">satış başvurusu</a> yapabilirsiniz; bu kitaplar adınızla yazılmaz. Yalnızca kitap alıyoruz; dergi ve ansiklopedi gibi yayınlar duruma göre incelenir. Kitap dışı eşyaları alamıyoruz.</p>
