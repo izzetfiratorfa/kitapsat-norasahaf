@@ -218,7 +218,7 @@ home += f'''<main>
     ('Her kitabı alıyor musunuz?', 'Hayır. <a href="#almiyoruz">Almadığımız kitapları</a> yukarıda yazdık. Almadıklarımızı teklifte de açıkça belirtiriz; bağış olarak bırakabilir ya da geri alabilirsiniz.'),
     ('Fotoğraf çekemiyorum ya da çok kitabım var, ne yapmalıyım?', 'Evinize gelip bakabiliriz. Yerinde bakış kapasitemize göre planlanır; <a href="kitap-sat.html?yerinde=1">formda bu seçeneği işaretleyin</a> ya da arayın, uygun günü birlikte belirleyelim.'),
     ('İstanbul dışından başvurabilir miyim?', 'Evet, başvurabilirsiniz. İstanbul dışı başvurular durumuna göre değerlendirilir: kitap sayısı, türü ve bulunduğu yer. Fotoğrafları gönderin, yapılıp yapılamayacağını yazarız.'),
-    ('Kitapları kim, nasıl teslim alıyor?', 'Teslim şeklini teklifte konuşuruz: adresinizden alım ya da dükkâna getirme. Nora Hafıza bağışlarında öncelikle adresinizden alırız; satışlarda adresten alım, kitap sayısına ve hacmine göre değerlendirilir. Açık adresinizi bu aşamada istemiyoruz; teklifi kabul ederseniz sorarız.'),
+    ('Kitapları kim, nasıl teslim alıyor?', 'Teslim şeklini teklifte konuşuruz: adresinizden alım ya da dükkâna getirme. Nora Hafıza bağışlarında adresten alım her zaman ücretsizdir. Satışlarda adresten alım, adresinize ve kitap sayısına göre her başvuruda ayrıca değerlendirilir; yakın bölgelerde ücretsizdir, uzak adreslerde teklifte ayrıca konuşuruz. Büyük kütüphaneler için nakliye aracı ayarlarız. Açık adresinizi bu aşamada istemiyoruz; teklifi kabul ederseniz sorarız.'),
     ('Ödeme ne zaman, nasıl yapılıyor?', 'Satışta ödeme, kitaplar teslim alınıp fotoğraflarla karşılaştırıldıktan sonra yapılır. Üç yöntemden birini seçersiniz: nakit, havale/EFT ya da Nora’da harcayabileceğiniz bakiye (teklifin aynı tutarında). Bakiyeyi isterseniz teklifin yalnızca bir kısmı için de seçebilirsiniz. Sizden ön ödeme ya da online ödeme istemiyoruz.'),
     ('Sadece kitap mı alıyorsunuz?', 'Evet, kitap alıyoruz. Dergi ve ansiklopedi gibi yayınlar duruma göre incelenir. Kitap dışı eşyaları alamıyoruz.'),
     ('Nora Hafıza’da bağışlanan kitaplar satılır mı?', 'Hayır. Nora Hafıza kapsamında bağışlanan kitaplar asla satılmaz; daima yerleşik kütüphanemizde kalır.'),
@@ -415,7 +415,7 @@ service_page('tasinma-kentsel-donusum.html', 'Taşınma ve kentsel dönüşümde
 <li>Kat ve asansör durumu</li>
 <li>Araç girişi, park mesafesi gibi taşıma koşulları</li>
 </ul>
-<p>Buna göre teslim şeklini seçeriz: adresinizden alım ya da dükkâna getirme. Hafıza bağışlarında öncelikle adresinizden alırız. Açık adresi, teklifi kabul ettikten sonra sorarız.</p>
+<p>Buna göre teslim şeklini seçeriz: adresinizden alım ya da dükkâna getirme. Hafıza bağışlarında adresten alım ücretsizdir ve önceliklidir. Açık adresi, teklifi kabul ettikten sonra sorarız.</p>
 
 <h2>Koliye koymadan önce fotoğraf gönderin</h2>
 <p>Kitapları kutulayıp bantlamadan önce fotoğraf gönderin. Neyin alınacağını, neyin kolilenmesi gerektiğini birlikte netleştirirsek gereksiz iş yapmazsınız.</p>
