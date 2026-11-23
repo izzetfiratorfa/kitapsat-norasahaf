@@ -22,7 +22,7 @@ WA_PHOTO = wa('Merhaba, kitaplığımın fotoğraflarını göndermek istiyorum.
 WA_KURUM = wa('Merhaba, kurum olarak toplu kitap devretmek istiyoruz.\n\nKurum adı:\nTahmini kitap sayısı:\nİstenen teslim tarihi:\nKitapların bulunduğu adres (ilçe):\nKat / asansör var mı:\nTaşıma koşulları (araç girişi, mesafe vb.):\n\nFotoğrafları bu sohbete ekliyorum.')
 WA_ACIL = wa('Merhaba, boşaltma tarihim yakın, kitaplarım için yardım istiyorum.\n\nBoşaltma tarihi:\nTahmini kitap sayısı:\nİlçe:\nKat / asansör var mı:\nNedeni (taşınma / kentsel dönüşüm):\n\nFotoğrafları bu sohbete ekliyorum.')
 CTA = 'kitap-sat.html'
-SURE = 'Başvuruları genellikle 1–2 iş günü içinde yanıtlıyoruz. Yoğun dönemlerde süre uzayabilir.'
+SURE = 'Başvuruları genellikle 3 iş günü içinde yanıtlıyoruz. Yoğun dönemlerde süre uzayabilir.'
 FREE = 'Teklif almak ücretsizdir. Kabul etmek zorunda değilsiniz.'
 
 SERVICES = [
@@ -189,7 +189,7 @@ home += f'''<main>
 <li>Yoğun nem ve küf hasarı olanlar.</li>
 <li>Sayfaları eksik ya da kullanılamayacak durumda olanlar.</li>
 <li>Çok ağır yıpranmış, okunamayacak durumdaki kitaplar.</li>
-<li>Güncelliğini yitirmiş ve yeniden okur bulması zor olan bazı yayınlar.</li>
+<li>Güncelliğini yitirmiş yayınlar, test kitapları.</li>
 </ul>
 <p style="margin-top:1.2rem">Emin değilseniz yine de fotoğraf gönderin. Neyi neden almadığımızı teklifte açıkça yazarız.</p>
 </div></section>

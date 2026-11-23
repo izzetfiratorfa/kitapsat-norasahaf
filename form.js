@@ -45,9 +45,12 @@
   /* ---- mesaj ---- */
   var NEDEN={tasinma:'Taşınma',kentsel:'Kentsel dönüşüm',vefat:'Aileden birinin vefatı',diger:'Diğer'};
   function code(){
+    // tarih + saat:dakika + 5 rastgele karakter (kriptografik rastgelelik). Aynı dakikada çakışma ihtimali ~1/24 milyon.
     var d=new Date(),p=function(n){return String(n).padStart(2,'0')};
-    var n=String(Math.floor(Math.random()*900)+100);
-    return 'NORA-'+String(d.getFullYear()).slice(2)+p(d.getMonth()+1)+p(d.getDate())+'-'+n;
+    var A='ABCDEFGHJKLMNPRSTUVYZ23456789',r='',buf=new Uint32Array(5);
+    (window.crypto||window.msCrypto).getRandomValues(buf);
+    for(var i=0;i<5;i++)r+=A[buf[i]%A.length];
+    return 'NORA-'+String(d.getFullYear()).slice(2)+p(d.getMonth()+1)+p(d.getDate())+'-'+p(d.getHours())+p(d.getMinutes())+'-'+r;
   }
   function message(c){
     var t=mode(),L=[];
