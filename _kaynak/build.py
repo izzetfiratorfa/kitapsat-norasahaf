@@ -529,12 +529,12 @@ hf += f'''<main>
 <p>Hafıza bu boşluk için. Kitabın bir geçmişi vardır: kimin okuduğu, kimin kitaplığından geldiği. Biz bunu silmek yerine kitabın içine yazıyoruz.</p>
 
 <h2>Kitaba ne yazılıyor?</h2>
-<p>Her kitabın içine sahibinin adını, isterseniz belirlediğiniz bir notu yazarız. Kısa ve sade olur:</p>
+<p>Her kitaba Hafıza damgası vurur, sahibinin adını elle yazarız; isterseniz belirlediğiniz bir notu da ekleriz. Kısa ve sade olur:</p>
 <div class="pull">“Ahmet Yılmaz’ın kitaplığından.”</div>
 <p>Yanına birkaç cümle eklemek isterseniz ekleriz; örneğin kitabı kimin, hangi yıllarda okuduğu ya da yeni okura bir dilek. Not isteğe bağlıdır; yalnızca ad da yeterlidir.</p>
 
 <h2>Hafıza kaydı</h2>
-<p>Hafıza bağışı olarak devraldığımız kitaplara Nora Hafıza kaydı açarız: kimin kitaplığından geldiği, neden devredildiği (söylemek isterseniz) ve notunuz. Kitaplık sahibinin adı kitapla birlikte kalır.</p>
+<p>Hafıza bağışı olarak devraldığımız kitaplara Nora Hafıza kaydı açarız: kimin kitaplığından geldiği, neden devredildiği (söylemek isterseniz) ve notunuz. Teslimden sonra size WhatsApp’tan kayıt numaranızı ve özetini göndeririz. Kitaplık sahibinin adı kitapla birlikte kalır.</p>
 
 <h2>Kimler için?</h2>
 <ul>
@@ -550,8 +550,8 @@ hf += f'''<main>
 <div class="steps" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
 <div class="step"><h3>Başvurun</h3><p>Formda “Nora Hafıza”yı seçin. Kitapların içine yazılacak adı ve isterseniz notu yazın. Fotoğrafları WhatsApp sohbetine ekleyin.</p></div>
 <div class="step"><h3>Teslim</h3><p>Kitapların nasıl teslim edileceğini birlikte seçeriz: adresten alım ya da dükkâna getirme.</p></div>
-<div class="step"><h3>Adı yazarız</h3><p>Her kitabın içine sahibinin adını, isterseniz belirlediğiniz notu yazarız. Aralarından çıkan kişisel kâğıtları size veririz.</p></div>
-<div class="step"><h3>Kütüphanede kalır</h3><p>Kitaplar yerleşik kütüphanemizde yerini alır. Satılmaz, ödünç verilmez; yalnızca Nora’da okunur.</p></div>
+<div class="step"><h3>Adı yazarız</h3><p>Her kitaba Hafıza damgası vurur, sahibinin adını elle yazarız; isterseniz belirlediğiniz notu da ekleriz. Aralarından çıkan kişisel kâğıtları size veririz.</p></div>
+<div class="step"><h3>Kütüphanede kalır</h3><p>Kitaplar üst katımızdaki yerleşik kütüphanede yerini alır. Yer dolarsa depoda saklanır, dönüşümlü sergilenir. Satılmaz, ödünç verilmez; yalnızca Nora’da okunur.</p></div>
 </div>
 <p class="proc">Hafıza bir bağış biçimidir; kitapları satın almıyoruz. Para almak isterseniz normal <a href="{CTA}?tur=sat">satış başvurusu</a> yapabilirsiniz; bu kitaplar adınızla yazılmaz. Yalnızca kitap alıyoruz; dergi ve ansiklopedi gibi yayınlar duruma göre incelenir. Kitap dışı eşyaları alamıyoruz.</p>
 </div></section>
@@ -564,7 +564,7 @@ hf += f'''<main>
     ('Her kitabı alıyor musunuz?', 'Çoğunu. Çok yıpranmış, kullanılamayacak durumdakileri ayırırız; bunu size de söyleriz. <a href="index.html#almiyoruz">Almadığımız kitapları</a> ana sayfada yazdık.'),
     ('Kitabın içine yazı yazmanız kitaba zarar vermez mi?', 'Zarar vermeyecek biçimde, kısa ve okunaklı yazarız. İsterseniz önce nasıl yazılacağını sorabilirsiniz.'),
     ('Bağış sonrası kitaplara ne olduğunu görebilir miyim?', 'Evet. Dükkânımıza gelip bakabilirsiniz.'),
-    ('Kaç kitap getirebilirim?', 'Hafıza için ayrı bir kontenjan ya da sınır koymuyoruz; adedin alt ve üst sınırı yok. Çok sayıda ise önce fotoğraf gönderin, teslim yöntemini konuşuruz.'),
+    ('Kaç kitap getirebilirim?', 'Hafıza bağışını sayıyla sınırlamıyoruz. Üst katımızdaki yerleşik kütüphanemiz dolarsa fazlası depoda saklanır ve dönüşümlü sergilenir; kitaplar yine mekân içinde kalır. Çok sayıda ise önce fotoğraf gönderin, teslim yöntemini konuşuruz.'),
 ]) + f'''
 </div></section>
 
