@@ -84,7 +84,7 @@ def header():
 <a href="nora-hafiza.html">Nora Hafıza</a>
 <div class="grp"><button class="gbtn" type="button" aria-expanded="false">Kitap türleri ve özel durumlar</button><div class="gsub">{subs}</div></div>
 <a href="index.html#iletisim">İletişim</a>
-<a class="btn" href="{CTA}">Satış / bağış başvurusu</a>
+<a class="btn" href="{CTA}">Bağış / satış başvurusu</a>
 </nav></div></header>
 '''
 
@@ -140,25 +140,25 @@ jsonld = json.dumps({
                 "addressLocality": "Fatih", "addressRegion": "İstanbul", "addressCountry": "TR"},
 }, ensure_ascii=False)
 
-home = head('Kitaplarınızı satın alıyor veya bağış olarak devralıyoruz · Nora Kitap Evi',
-            'Taşınma, kentsel dönüşüm veya vefat sonrası kitaplarınızı satın alır ya da bağış olarak kabul ederiz. Nora Hafıza ile kitaplığınızı adınızla yaşatın. Fatih Şehremini, İstanbul.',
+home = head('Kitaplarınızı bağışlayın, hafızaları kütüphanemizde yaşasın · Nora Hafıza',
+            'Taşınma, kentsel dönüşüm veya vefat nedeniyle kitaplarınızdan ayrılıyorsanız Nora Hafıza’ya bağışlayın: her kitabın içine adınızı yazar, kütüphanemizde saklarız. Satın da alabiliriz. Fatih Şehremini, İstanbul.',
             f'<script type="application/ld+json">{jsonld}</script>')
 home += header()
 home += f'''<main>
 <section class="hero"><div class="wrap">
-<span class="kicker" style="color:#e0584f">Nora Kitap Evi · Şehremini, İstanbul</span>
-<h1>Kitaplarınızı satın alıyor veya bağış olarak devralıyoruz.</h1>
-<p class="tagline">Kitaplarınızın bir sonraki <em>durağı.</em></p>
-<p class="lead">Taşınıyorsunuz, bina yıkılıyor ya da bir kütüphane sahipsiz kaldı. Kitaplarınızı satın alır veya bağış olarak kabul ederiz. İsterseniz Nora Hafıza ile her kitabın içine sahibinin adını yazarız.</p>
-<div class="btns"><a class="btn" href="{CTA}">Fotoğrafları gönderin, teklifinizi alın</a><a class="btn ghost" href="{WA_HI}">WhatsApp’tan yazın</a></div>
+<span class="kicker" style="color:#e0584f">Nora Hafıza · Nora Kitap Evi · Şehremini, İstanbul</span>
+<h1>Kitaplarınızı bağışlayın. <em>Hafızaları kütüphanemizde yaşamaya devam etsin.</em></h1>
+<p class="lead">Taşınma, kentsel dönüşüm ya da bir yakınınızın vefatı yüzünden kitaplarınızdan ayrılmak zorundaysanız, onları bize bağışlayın. Her kitabın içine adınızı yazar, kütüphanemizde saklarız. Bu kitaplar satılmaz ve dükkândan çıkarılmaz.</p>
+<p class="tagline" style="font-size:1.1rem;margin-top:-.4rem">Bağışlamak istemiyorsanız onları satın da alabiliriz.</p>
+<div class="btns"><a class="btn" href="{CTA}?tur=hafiza">Nora Hafıza’ya bağış yapın</a><a class="btn ghost" href="{WA_HI}">WhatsApp’tan yazın</a></div>
 </div></section>
 
 <section><div class="wrap">
 <div class="head"><span class="kicker">Üç yol</span><h2>Ne yapmak istiyorsunuz?</h2></div>
 <div class="grid g3">
-<a class="card" href="{CTA}?tur=sat"><div class="tag">Satış</div><h3>Kitaplarımı satmak istiyorum</h3><p>Fotoğrafları gönderin, teklifimizi alın.</p><span class="more">Satış başvurusu →</span></a>
+<a class="card red" href="nora-hafiza.html"><div class="tag">Nora Hafıza</div><h3>Kitaplarım adımla kalsın</h3><p>Kitaplarınızı bağışlayın; içine adınızı ve notunuzu yazalım, kütüphanemizde yaşasın.</p><span class="more">Nasıl işliyor →</span></a>
 <a class="card" href="{CTA}?tur=bagis"><div class="tag">Karşılıksız bağış</div><h3>Kitaplarımı bağışlamak istiyorum</h3><p>Kitaplarınızı karşılıksız devredin.</p><span class="more">Bağış başvurusu →</span></a>
-<a class="card red" href="nora-hafiza.html"><div class="tag">Nora Hafıza</div><h3>Nora Hafıza</h3><p>Kitaplarınızı adınızla ve notunuzla yaşatın.</p><span class="more">Nasıl işliyor →</span></a>
+<a class="card" href="{CTA}?tur=sat"><div class="tag">Satış</div><h3>Kitaplarımı satmak istiyorum</h3><p>Fotoğrafları gönderin, teklifimizi alın.</p><span class="more">Satış başvurusu →</span></a>
 </div>
 {quick_box()}
 {visit_box()}
@@ -279,9 +279,9 @@ form_page += f'''<main>
 <div class="form">
 <h2><span>01</span> Ne yapmak istiyorsunuz?</h2>
 <div class="modes">
-<label class="mode"><input type="radio" name="tur" value="sat" checked><span><b>Satış</b>Kitaplarınızı Nora’ya satın.</span></label>
+<label class="mode"><input type="radio" name="tur" value="hafiza" checked><span><b>Nora Hafıza</b>Kitaplarınızı sahibinin adı ve kişisel notuyla yaşatın. Bu kitaplar asla satılmaz ve mekân dışına çıkarılmaz; yerleşik kütüphanemizde kalır.</span></label>
 <label class="mode"><input type="radio" name="tur" value="bagis"><span><b>Karşılıksız bağış</b>Kitaplarınızı bedelsiz devredin.</span></label>
-<label class="mode"><input type="radio" name="tur" value="hafiza"><span><b>Nora Hafıza</b>Kitaplarınızı sahibinin adı ve kişisel notuyla yaşatın. Bu kitaplar asla satılmaz ve mekân dışına çıkarılmaz; yerleşik kütüphanemizde kalır.</span></label>
+<label class="mode"><input type="radio" name="tur" value="sat"><span><b>Satış</b>Kitaplarınızı Nora’ya satın.</span></label>
 </div>
 <div id="hafizaBox" class="hidden" style="margin-top:22px;border-top:1px solid var(--line);padding-top:22px">
 <label class="f">Kitapların içine yazılacak ad *<small> (örn. "Ahmet Yılmaz’ın kitaplığından")</small>
@@ -354,10 +354,12 @@ form_page += f'''<main>
 write('kitap-sat.html', form_page)
 
 # ================================================================ HİZMET SAYFALARI
+TUR = {'tasinma-kentsel-donusum.html':'hafiza','vefat-sonrasi-kutuphane.html':'hafiza'}
 def service_page(slug, title, desc, h1, lead, body, faqs, hero_btns=None, hafiza_band=False):
+    tur = TUR.get(slug,'sat')
     pg = head(title + ' · Nora Kitap Evi', desc)
     pg += header()
-    btns = hero_btns or f'<a class="btn" href="{CTA}">Fotoğrafları gönderin, teklifinizi alın</a><a class="btn ghost" href="{WA_HI}">WhatsApp’tan yazın</a>'
+    btns = hero_btns or f'<a class="btn" href="{CTA}?tur={tur}">Fotoğrafları gönderin, teklifinizi alın</a><a class="btn ghost" href="{WA_HI}">WhatsApp’tan yazın</a>'
     pg += f'''<main>
 <section class="hero sub"><div class="wrap">
 <div class="crumb"><a href="index.html">Ana sayfa</a> / {e(LABEL[slug])}</div>
@@ -376,7 +378,7 @@ def service_page(slug, title, desc, h1, lead, body, faqs, hero_btns=None, hafiza
 <div class="btns"><a class="btn" href="nora-hafiza.html">Nora Hafıza nedir?</a></div></div></section>'''
     others = ''.join(f'<a href="{u}">{t}</a>' for u, t, _ in SERVICES if u != slug)
     pg += f'''<section><div class="wrap narrow"><h3>Başka bir durum mu var?</h3><div class="links">{others}<a href="nora-hafiza.html">Nora Hafıza</a></div>
-<div class="btns" style="margin-top:2rem"><a class="btn" href="{CTA}">Başvuru formuna git</a><a class="btn ghost" style="color:var(--ink)" href="tel:{PHONE_TEL}">Ara: {PHONE_TXT}</a></div></div></section>
+<div class="btns" style="margin-top:2rem"><a class="btn" href="{CTA}?tur={tur}">Başvuru formuna git</a><a class="btn ghost" style="color:var(--ink)" href="tel:{PHONE_TEL}">Ara: {PHONE_TXT}</a></div></div></section>
 </main>
 ''' + footer()
     write(slug, pg)
@@ -410,7 +412,7 @@ service_page('kutuphane-alimi.html', 'Kütüphane ve toplu kitap alımı',
     [('Önceden ayıklamam gerekir mi?', 'Hayır. Olduğu gibi gösterin. Ayıklama işi zorlaştırır ve sizi yorar.'),
      ('Fiyat düşük gelirse?', 'Reddedebilirsiniz. Almadığımız kitapları bağış olarak vermek, hurda fiyatıyla bize bırakmak ya da kendinizde tutmak size kalmış.'),
      ('Kurum olarak da başvurabilir miyiz?', 'Evet. Yukarıdaki kurum mesajıyla yazın; sayı, tarih, kat ve taşıma koşullarını bilmemiz yeterli.')],
-    hero_btns=f'<a class="btn" href="{CTA}">Fotoğrafları gönderin, teklifinizi alın</a><a class="btn ghost" href="{WA_KURUM}">Kurum başvurusu</a>')
+    hero_btns=f'<a class="btn" href="{CTA}?tur=sat">Fotoğrafları gönderin, teklifinizi alın</a><a class="btn ghost" href="{WA_KURUM}">Kurum başvurusu</a>')
 
 service_page('tasinma-kentsel-donusum.html', 'Taşınma ve kentsel dönüşümde kitaplar',
     'Kentsel dönüşüm ya da taşınma yüzünden kitaplarınızdan ayrılmak zorundaysanız Nora satın alır ya da bağış olarak kabul eder. Süre daralırken yapılacaklar.',
@@ -437,7 +439,7 @@ service_page('tasinma-kentsel-donusum.html', 'Taşınma ve kentsel dönüşümde
     [('Binamız iki hafta içinde boşalıyor, yetişir mi?', 'Yazın. Süre kısaysa WhatsApp’tan ya da telefonla doğrudan konuşmak en hızlısı.'),
      ('Hepsini sığdıramayacağım, bir kısmını bağışlayabilir miyim?', 'Evet. Bir kısmı satış, bir kısmı bağış olabilir; formda notta belirtmeniz yeter.'),
      ('Nemli ya da küflü kitaplar var.', 'Fotoğrafta gösterin. Almadıklarımızı teklifte açıkça yazarız.')],
-    hero_btns=f'<a class="btn" href="{CTA}">Fotoğrafları gönderin, teklifinizi alın</a><a class="btn ghost" href="{WA_ACIL}">Süre dar: WhatsApp</a>',
+    hero_btns=f'<a class="btn" href="{CTA}?tur=hafiza">Fotoğrafları gönderin, teklifinizi alın</a><a class="btn ghost" href="{WA_ACIL}">Süre dar: WhatsApp</a>',
     hafiza_band=True)
 
 service_page('vefat-sonrasi-kutuphane.html', 'Vefat sonrası kütüphane',
@@ -465,7 +467,7 @@ service_page('vefat-sonrasi-kutuphane.html', 'Vefat sonrası kütüphane',
     [('Kitaplardan bazılarını ailede tutmak istiyoruz.', 'Elbette. Önce istediklerinizi ayırın, kalanı bize gösterin. Kısmi başvuru sorun değil.'),
      ('Hafıza için ne yazıyorsunuz?', 'Kitabın içine kütüphane sahibinin adını, isterseniz sizin belirlediğiniz kısa bir notu yazarız. Not isteğe bağlıdır.'),
      ('Hafıza bağışında kitaplara ne oluyor?', 'Yerleşik kütüphanemizde kalır ve okurlarla buluşur. Satılmaz. Dükkâna gelip bakabilirsiniz.')],
-    hero_btns=f'<a class="btn" href="{CTA}">Başvuru formu</a><a class="btn ghost" href="{WA_HI}">WhatsApp’tan yazın</a>')
+    hero_btns=f'<a class="btn" href="{CTA}?tur=hafiza">Başvuru formu</a><a class="btn ghost" href="{WA_HI}">WhatsApp’tan yazın</a>')
 
 service_page('eski-nadir-kitap.html', 'Eski, nadir ve eski harfli kitap',
     'İlk baskı, imzalı, numaralı, eski harfli (Osmanlıca) ve eski basım kitapları Nora değerlendirir. Fotoğraf gönderin, teklif alın.',
