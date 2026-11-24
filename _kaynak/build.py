@@ -56,6 +56,8 @@ def head(title, desc, extra=''):
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Nora Kitap Evi">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:image" content="{SITE}img/og.jpg">
 <meta property="og:image:width" content="899">
