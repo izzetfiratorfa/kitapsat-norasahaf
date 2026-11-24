@@ -162,6 +162,7 @@ home += f'''<main>
 
 <section class="alt" id="nasil"><div class="wrap">
 <div class="head"><span class="kicker">Nasıl çalışır</span><h2>Üç adım. Kitapları ayıklamanıza gerek yok.</h2></div>
+<figure class="one"><img src="img/istif.jpg" width="900" height="1032" loading="lazy" alt="Dükkândan bir kare: kitap istifleri, çerçeveli fotoğraflar ve istif üstünde oturan beyaz bir kedi"><figcaption>Büyük istifler bizi korkutmuyor. Ayıklamak bizim işimiz.</figcaption></figure>
 <div class="steps">
 <div class="step"><h3>Fotoğraf ve form</h3><p>Formu doldurun. Form hazır bir WhatsApp mesajı üretir; kitap fotoğraflarını o sohbete eklersiniz.</p></div>
 <div class="step"><h3>Yanıtımız</h3><p>Fotoğraflara bir insan bakar (Fırat ya da Nur); genellikle 3 iş günü içinde yanıtlarız. Satışta teklif, bağışta teslim planı gelir.</p></div>
@@ -235,7 +236,7 @@ home += f'''<main>
 <section class="alt"><div class="wrap narrow">
 <span class="kicker">Hakkımızda</span>
 <h2>Kitapçı-kafe, hepsi bu.</h2>
-<div class="photos"><figure><img src="img/on-cephe.jpg" width="899" height="649" loading="lazy" alt="Nora Kitap Cafe'nin kırmızı tentesi, önünde masalar ve kitap istifleri"><figcaption>Ahmet Vefikpaşa Caddesi, Şehremini. Kırmızı tentayı arayın.</figcaption></figure><figure><img src="img/giris.jpg" width="899" height="556" loading="lazy" alt="Kapıdan içeri bakış: raflar, kitap istifleri ve girişte oturan turuncu bir kedi"><figcaption>Girişte sizi genellikle bir kedi karşılar. Üst katımız da var.</figcaption></figure></div>
+<div class="photos"><figure><img src="img/on-cephe.jpg" width="899" height="649" loading="lazy" alt="Nora Kitap Cafe'nin kırmızı tentesi, önünde masalar ve kitap istifleri"><figcaption>Ahmet Vefikpaşa Caddesi, Şehremini. Kırmızı tenteyi arayın.</figcaption></figure><figure><img src="img/giris.jpg" width="899" height="556" loading="lazy" alt="Kapıdan içeri bakış: raflar, kitap istifleri ve girişte oturan turuncu bir kedi"><figcaption>Girişte sizi genellikle bir kedi karşılar. Üst katımız da var.</figcaption></figure></div>
 <p>Nora Kitap Evi, Şehremini’nde kitap satan, çay ve kahve servis eden bir yer. Pazarlama diliyle pek aramız yok. Bir şeyi ya alırız ya almayız; her ikisini de açıkça söyleriz.</p>
 <p>Kitaplarımızın bir kısmı bağış yoluyla geliyor. Bu yüzden onların doğru okurlara ulaşmasını, iyi bir yere gitmesini önemsiyoruz. Meseleyi bundan ibaret görüyoruz.</p>
 </div></section>
