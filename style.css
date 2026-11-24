@@ -228,3 +228,11 @@ textarea{min-height:100px;resize:vertical}
 
 .alt details{border-color:#b9ad94}
 .alt details summary{font-size:1.15rem}
+
+figure{margin:0}
+figure img{display:block;width:100%;height:auto;border:1px solid #d9d0bd}
+figcaption{font-size:1rem;color:#4a4a4a;margin-top:8px;line-height:1.45}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.4rem 0 1.6rem}
+.photos img{aspect-ratio:4/3;object-fit:cover}
+figure.one{max-width:440px;margin:1.6rem 0}
+@media(max-width:640px){.photos{grid-template-columns:1fr}}

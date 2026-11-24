@@ -27,6 +27,7 @@ IG = 'https://www.instagram.com/nora.cafekitap/'
 XTW = 'https://x.com/NoraBiKitapEvi'
 FB = 'https://www.facebook.com/norakitapcafe'
 HOURS = 'Pazartesi–Cumartesi 08.00–20.00 · Pazar 13.00–19.00'
+SITE = 'https://izzetfiratorfa.github.io/kitapsat-norasahaf/'  # alan adı alınınca burayı değiştir
 GOATCOUNTER = 'norasahaf'  # goatcounter.com'da kayıt olup seçtiğin kodu yaz, ör. 'norakitap' -> https://norakitap.goatcounter.com
 SURE = 'Başvuruları genellikle 3 iş günü içinde yanıtlıyoruz. Yoğun dönemlerde süre uzayabilir.'
 FREE = 'Teklif almak ücretsizdir. Kabul etmek zorunda değilsiniz.'
@@ -56,6 +57,11 @@ def head(title, desc, extra=''):
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="tr_TR">
+<meta property="og:image" content="{SITE}img/og.jpg">
+<meta property="og:image:width" content="899">
+<meta property="og:image:height" content="471">
+<meta property="og:image:alt" content="Nora Kitap Cafe'nin kırmızı tentesi ve kitap istifleriyle dolu girişi">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 {GC}
@@ -229,6 +235,7 @@ home += f'''<main>
 <section class="alt"><div class="wrap narrow">
 <span class="kicker">Hakkımızda</span>
 <h2>Kitapçı-kafe, hepsi bu.</h2>
+<div class="photos"><figure><img src="img/on-cephe.jpg" width="899" height="649" loading="lazy" alt="Nora Kitap Cafe'nin kırmızı tentesi, önünde masalar ve kitap istifleri"><figcaption>Ahmet Vefikpaşa Caddesi, Şehremini. Kırmızı tentayı arayın.</figcaption></figure><figure><img src="img/giris.jpg" width="899" height="556" loading="lazy" alt="Kapıdan içeri bakış: raflar, kitap istifleri ve girişte oturan turuncu bir kedi"><figcaption>Girişte sizi genellikle bir kedi karşılar. Üst katımız da var.</figcaption></figure></div>
 <p>Nora Kitap Evi, Şehremini’nde kitap satan, çay ve kahve servis eden bir yer. Pazarlama diliyle pek aramız yok. Bir şeyi ya alırız ya almayız; her ikisini de açıkça söyleriz.</p>
 <p>Kitaplarımızın bir kısmı bağış yoluyla geliyor. Bu yüzden onların doğru okurlara ulaşmasını, iyi bir yere gitmesini önemsiyoruz. Meseleyi bundan ibaret görüyoruz.</p>
 </div></section>
@@ -523,6 +530,7 @@ hf += f'''<main>
 
 <section><div class="wrap narrow prose">
 <div class="callout"><b>Nora Hafıza’da bağışlanan kitaplar asla satılmaz ve asla mekân dışına çıkarılmaz.</b> Daima yerleşik kütüphanemizde kalır; okurlarla ve öğrencilerle buluşmaya, Nora’da okunarak devam eder.</div>
+<figure class="one"><img src="img/raf-kedi.jpg" width="884" height="1180" loading="lazy" alt="Ahşap bir rafta kitapların altında uyuyan beyaz-turuncu bir kedi"><figcaption>Kitaplar burada yaşıyor. Okunuyor, ellenip yerine konuyor, rafta kalıyor.</figcaption></figure>
 
 <h2>Neden böyle bir şey?</h2>
 <p>Bir evden çıkarken kitaplar en çok zorlanılan eşyadır. Taşıyamazsınız, sığdıramazsınız, çöpe de atamazsınız. Kentsel dönüşümde, taşınmada, bir yakınımızı kaybettiğimizde de aynı şey olur: kitaplar “bir yerlere gider” ve geçmişleri silinir.</p>
@@ -617,12 +625,14 @@ write('kvkk.html', kv)
 # ================================================================ 404 + dosyalar
 nf = head('Sayfa bulunamadı · Nora Kitap Evi', 'Aradığınız sayfa bulunamadı.')
 nf += header()
-nf += '''<main><section class="hero sub"><div class="wrap"><h1>Bu sayfa kayıp.</h1><p class="lead">Kitaplar gibi, bazen sayfalar da raftan düşer.</p><div class="btns"><a class="btn" href="index.html">Ana sayfaya dön</a></div></div></section></main>
+nf += '''<main><section class="hero sub"><div class="wrap"><h1>Bu sayfa kayıp.</h1><p class="lead">Kitaplar gibi, bazen sayfalar da raftan düşer.</p><figure class="one"><img src="img/kedi-vitrin.jpg" width="899" height="1001" alt="Arkası dönük turuncu bir kedi, Nora'nın vitrinine bakıyor"><figcaption>Kedi de arıyor.</figcaption></figure><div class="btns"><a class="btn" href="index.html">Ana sayfaya dön</a></div></div></section></main>
 ''' + footer()
 write('404.html', nf)
 
 for fn in ['style.css', 'main.js', 'form.js']:
     shutil.copy(os.path.join(SRC, fn), os.path.join(OUT, fn))
+import shutil
+shutil.copytree(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'img'), os.path.join(OUT, 'img'), dirs_exist_ok=True)
 write('favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="#0d0d0d"/><text x="32" y="44" font-family="Georgia,serif" font-size="38" font-weight="700" text-anchor="middle" fill="#f2ece0">N</text><circle cx="49" cy="44" r="5" fill="#b3201f"/></svg>')
 write('.nojekyll', '')
 print(sorted(os.listdir(OUT)))
