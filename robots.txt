@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://izzetfiratorfa.github.io/kitapsat-norasahaf/sitemap.xml

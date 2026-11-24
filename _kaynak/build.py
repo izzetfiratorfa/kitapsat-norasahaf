@@ -632,6 +632,10 @@ write('404.html', nf)
 
 for fn in ['style.css', 'main.js', 'form.js']:
     shutil.copy(os.path.join(SRC, fn), os.path.join(OUT, fn))
+write('google247842f674e2cddf.html', 'google-site-verification: google247842f674e2cddf.html')
+_pages = ['index','kitap-sat','kutuphane-alimi','tasinma-kentsel-donusum','vefat-sonrasi-kutuphane','eski-nadir-kitap','ansiklopedi-dergi','nora-hafiza','kvkk']
+write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'<url><loc>{SITE}{"" if n=="index" else n+".html"}</loc></url>\n' for n in _pages) + '</urlset>\n')
+write('robots.txt', f'User-agent: *\nAllow: /\nSitemap: {SITE}sitemap.xml\n')
 import shutil
 shutil.copytree(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'img'), os.path.join(OUT, 'img'), dirs_exist_ok=True)
 write('favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="#0d0d0d"/><text x="32" y="44" font-family="Georgia,serif" font-size="38" font-weight="700" text-anchor="middle" fill="#f2ece0">N</text><circle cx="49" cy="44" r="5" fill="#b3201f"/></svg>')
